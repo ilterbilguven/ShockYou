@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Controllers
@@ -38,6 +39,7 @@ namespace Controllers
         {
             _targetVelocity = Vector2.zero;
             ComputeVelocity();
+            Fire();
         }
 
         void FixedUpdate()
@@ -111,14 +113,6 @@ namespace Controllers
             {
                 _velocity.y = JumpTakeOffSpeed;
             }
-            else if (Input.GetButtonUp("Jump" + PlayerID))
-            {
-                if (_velocity.y > 0)
-                {
-                    _velocity.y = _velocity.y * 0.5f;
-                }
-            }
-
 
             //Below's for sprite and animator controls, no idea what they do.
             /*
@@ -133,6 +127,15 @@ namespace Controllers
             */
 
             _targetVelocity = move * MaxSpeed;
+        }
+
+        private void Fire()
+        {
+            if (Input.GetButtonDown("Fire" + PlayerID))
+            {
+                //Do sth
+                Debug.LogError("Player" + (Int32.Parse(PlayerID) + 1) + " has used FIRE!");
+            }
         }
     }
 }
