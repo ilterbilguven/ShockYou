@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 114465832139625392}
   - component: {fileID: 114924280328992200}
   - component: {fileID: 114573424801250904}
+  - component: {fileID: 114050176631394020}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -37,7 +38,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4622152849605206}
-  - component: {fileID: 114572484831167632}
+  - component: {fileID: 114533461867108438}
   m_Layer: 0
   m_Name: Core
   m_TagString: Untagged
@@ -119,8 +120,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1759715217430156}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -3.42, y: 1.84, z: 0}
+  m_LocalScale: {x: 0.5, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4622152849605206}
   m_RootOrder: 1
@@ -132,8 +133,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1804887914813610}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -0.66, z: 0}
+  m_LocalScale: {x: 0.5, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4622152849605206}
   m_RootOrder: 2
@@ -228,6 +229,47 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &114050176631394020
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1028709601126426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40b3b8c74987a8041958b605e362a25b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: Panels
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[PanelName, Assembly-CSharp],[PanelBase,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.EqualityComparer`1+DefaultComparer[[PanelName,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  ActivePanel: {fileID: 0}
 --- !u!114 &114230613737202080
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -239,9 +281,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15630f20ea334994a95e4bc85cba931b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerID: 1
   MinGroundNormalY: 0.65
   GravityModifier: 1
-  JumpTakeOffSpeed: 7
+  JumpTakeOffSpeed: 15
   MaxSpeed: 7
   Rb2D: {fileID: 50379370677869442}
 --- !u!114 &114317870303160878
@@ -255,9 +298,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15630f20ea334994a95e4bc85cba931b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerID: 0
   MinGroundNormalY: 0.65
   GravityModifier: 1
-  JumpTakeOffSpeed: 7
+  JumpTakeOffSpeed: 12
   MaxSpeed: 7
   Rb2D: {fileID: 50944502479762346}
 --- !u!114 &114465832139625392
@@ -273,10 +317,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Players:
   - {fileID: 1759715217430156}
-  LevelController: {fileID: 0}
-  SkillController: {fileID: 0}
-  PanelController: {fileID: 0}
---- !u!114 &114572484831167632
+  LevelController: {fileID: 114924280328992200}
+  SkillController: {fileID: 114573424801250904}
+  PanelController: {fileID: 114050176631394020}
+--- !u!114 &114533461867108438
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -284,7 +328,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1586608433557452}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d760798b9b3fd634a915d0e2208bc377, type: 3}
+  m_Script: {fileID: 11500000, guid: e47e6f77a13d00b438e3a766f5fe32c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114573424801250904

@@ -5,9 +5,11 @@ namespace Controllers
 {
     public class PlayerController : MonoBehaviour
     {
+        // ReSharper disable once InconsistentNaming
+        public string PlayerID;
         public float MinGroundNormalY = .65f;
         public float GravityModifier = 1f;
-        public float JumpTakeOffSpeed = 7;
+        public float JumpTakeOffSpeed = 10;
         public float MaxSpeed = 7;
         public Rigidbody2D Rb2D;
 
@@ -29,6 +31,7 @@ namespace Controllers
             _spriteRenderer = GetComponent<SpriteRenderer>();
             _animator = GetComponent<Animator>();
             Rb2D = GetComponent<Rigidbody2D>();
+            Rb2D.freezeRotation = true;
         }
 
         void Update()
@@ -102,13 +105,13 @@ namespace Controllers
         {
             Vector2 move = Vector2.zero;
 
-            move.x = Input.GetAxis("Horizontal");
+            move.x = Input.GetAxis("Horizontal" + PlayerID);
 
-            if (Input.GetButtonDown("Jump") && _grounded)
+            if (Input.GetButtonDown("Jump" + PlayerID) && _grounded)
             {
                 _velocity.y = JumpTakeOffSpeed;
             }
-            else if (Input.GetButtonUp("Jump"))
+            else if (Input.GetButtonUp("Jump" + PlayerID))
             {
                 if (_velocity.y > 0)
                 {
