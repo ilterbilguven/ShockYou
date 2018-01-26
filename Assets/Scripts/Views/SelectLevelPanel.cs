@@ -1,16 +1,12 @@
-﻿using System.Collections;
+﻿using Controllers;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SelectLevelPanel : MonoBehaviour {
+public class SelectLevelPanel : PanelBase {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public void OnBackButtonClicked()
+    {
+        GameController.Instance.PanelController.OpenPanel(PanelName.MainMenuPanel);
+    }
 }

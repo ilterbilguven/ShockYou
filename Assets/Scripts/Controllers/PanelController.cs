@@ -1,23 +1,38 @@
-﻿using System.Collections;
+﻿using Sirenix.OdinInspector;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
+[SerializeField]
 public enum PanelName
 {
     MainMenuPanel = 1,
     SelectLevelPanel = 2
 }
 
-public class PanelController : MonoBehaviour {
+public class PanelController : SerializedMonoBehaviour {
 
-    public MainMenuPanel MainMenuPanel;
-    public SelectLevelPanel SelectLevelPanel;
+    [SerializeField]
+    public Dictionary<PanelName, PanelBase> Panels = new Dictionary<PanelName, PanelBase>();
 
-    public GameObject ActivePanel;
+    public PanelBase ActivePanel;
 
-
-    public void OpenPanel(ContentType panelName)
+    public void OpenPanel(PanelName panelName)
     {
-        //if(ActivePanel)
+        if (ActivePanel != null)
+            ActivePanel.gameObject.SetActive(false);
+
+        PanelBase Panel = null;
+
+        if (Panels.TryGetValue(panelName, out Panel) != false)
+        {
+            ActivePanel = Panel;
+            Panel.gameObject.SetActive(true);
+        }
+        else
+        {
+            Debug.LogError("Panel not found.");
+        }
     }
 }

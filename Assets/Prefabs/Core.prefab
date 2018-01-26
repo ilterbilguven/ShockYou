@@ -275,6 +275,7 @@ MonoBehaviour:
   - {fileID: 1759715217430156}
   LevelController: {fileID: 0}
   SkillController: {fileID: 0}
+  PanelController: {fileID: 0}
 --- !u!114 &114572484831167632
 MonoBehaviour:
   m_ObjectHideFlags: 1

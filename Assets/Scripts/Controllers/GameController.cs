@@ -8,6 +8,9 @@ namespace Controllers
         public List<GameObject> Players;
         public LevelController LevelController;
         public SkillController SkillController;
+
+        public PanelController PanelController;
+
         void Awake()
         {
             if (_instance != null && _instance != this)
@@ -17,7 +20,12 @@ namespace Controllers
 
             //Extra start functions/statements.
         }
-        
+
+        private void Start()
+        {
+            PanelController.OpenPanel(PanelName.MainMenuPanel);
+        }
+
         #region Singleton
         private static GameController _instance;
         public static GameController Instance
