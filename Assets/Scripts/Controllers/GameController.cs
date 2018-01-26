@@ -4,7 +4,9 @@ namespace Controllers
 {
     public class GameController : MonoBehaviour
     {
-
+        public PlayerController PlayerController;
+        public LevelController LevelController;
+        public SkillController SkillController;
         void Awake()
         {
             if (_instance != null && _instance != this)
@@ -13,8 +15,9 @@ namespace Controllers
                 _instance = this;
 
             //Extra start functions/statements.
+            DontDestroyOnLoad(this);
         }
-
+        
         #region Singleton
         private static GameController _instance;
         public static GameController Instance
