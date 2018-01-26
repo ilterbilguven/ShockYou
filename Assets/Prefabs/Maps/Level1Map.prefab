@@ -23,8 +23,8 @@ GameObject:
   - component: {fileID: 3664157346301177280}
   - component: {fileID: 2113883505912484632}
   m_Layer: 0
-  m_Name: Normal
-  m_TagString: Untagged
+  m_Name: Neutral
+  m_TagString: Neutral
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 2113883507120876312}
   m_Layer: 0
   m_Name: Border
-  m_TagString: Untagged
+  m_TagString: Border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 2113883506911129118}
   m_Layer: 0
   m_Name: Charging
-  m_TagString: Untagged
+  m_TagString: Charging
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
