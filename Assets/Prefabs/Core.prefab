@@ -407,11 +407,11 @@ MonoBehaviour:
     SerializationNodes:
     - Name: Panels
       Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[PanelName, Assembly-CSharp],[PanelBase,
+      Data: 0|System.Collections.Generic.Dictionary`2[[Controllers.PanelName, Assembly-CSharp],[PanelBase,
         Assembly-CSharp]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 1|System.Collections.Generic.EqualityComparer`1+DefaultComparer[[PanelName,
+      Data: 1|System.Collections.Generic.EqualityComparer`1+DefaultComparer[[Controllers.PanelName,
         Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 8
@@ -507,6 +507,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Players:
   - {fileID: 1759715217430156}
+  - {fileID: 1561485614632498}
+  - {fileID: 0}
+  - {fileID: 0}
   LevelController: {fileID: 114924280328992200}
   SkillController: {fileID: 114573424801250904}
   PanelController: {fileID: 114050176631394020}
