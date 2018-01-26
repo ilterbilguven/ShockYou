@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Controllers
@@ -7,9 +8,10 @@ namespace Controllers
     {
         public List<GameObject> Players;
         public LevelController LevelController;
-        public SkillController SkillController;
-
+        public SpellController SpellController;
         public PanelController PanelController;
+
+        public Action LevelStarted;
 
         void Awake()
         {

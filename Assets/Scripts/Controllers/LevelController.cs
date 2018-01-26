@@ -1,17 +1,20 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
 
 namespace Controllers
 {
     public class LevelController : MonoBehaviour {
 
-        // Use this for initialization
-        void Start () {
-		
+        public List<Transform> SpellPoints;
+                
+        public void StartLevel()
+        {
+            // Set some things here
+
+            GameController.Instance.LevelController = this;
+            GameController.Instance.LevelStarted.Invoke();
         }
-	
-        // Update is called once per frame
-        void Update () {
-		
-        }
+        
     }
 }

@@ -1,10 +1,11 @@
 ﻿using Sirenix.OdinInspector;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[SerializeField]
+[Serializable]
 public enum PanelName
 {
     MainMenuPanel = 1,
