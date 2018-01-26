@@ -1,10 +1,11 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace Controllers
 {
     public class GameController : MonoBehaviour
     {
-        public PlayerController PlayerController;
+        public List<GameObject> Players;
         public LevelController LevelController;
         public SkillController SkillController;
         void Awake()
@@ -15,7 +16,6 @@ namespace Controllers
                 _instance = this;
 
             //Extra start functions/statements.
-            DontDestroyOnLoad(this);
         }
         
         #region Singleton
