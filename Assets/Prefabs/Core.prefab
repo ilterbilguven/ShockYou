@@ -47,7 +47,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1561485614632498
 GameObject:
   m_ObjectHideFlags: 0
@@ -66,7 +66,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1586608433557452
 GameObject:
   m_ObjectHideFlags: 0
@@ -101,7 +101,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1804887914813610
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,7 +120,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4332511371918488
 Transform:
   m_ObjectHideFlags: 1
@@ -469,7 +469,7 @@ MonoBehaviour:
   - {fileID: 1517483404838894}
   - {fileID: 1804887914813610}
   LevelController: {fileID: 114924280328992200}
-  SpellController: {fileID: 0}
+  SpellController: {fileID: 114573424801250904}
   PanelController: {fileID: 0}
 --- !u!114 &114533461867108438
 MonoBehaviour:
@@ -496,11 +496,7 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects:
-    - {fileID: 114291287536208840, guid: 95388b7eef2e69143a2a96a13c7fe7c5, type: 2}
-    - {fileID: 114291287536208840, guid: 65b2442549c679c4e8b4e568015e7460, type: 2}
-    - {fileID: 114291287536208840, guid: d964364c72b5d434e98ebbbf3fcdd064, type: 2}
-    - {fileID: 114291287536208840, guid: 72423a73b3edaf249bfad611c2b18944, type: 2}
+    ReferencedUnityObjects: []
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -519,55 +515,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 4
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 3
       Data: 0
-    - Name: 
-      Entry: 10
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 10
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 2
-    - Name: 
-      Entry: 10
-      Data: 2
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 3
-    - Name: 
-      Entry: 10
-      Data: 3
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 13
       Data: 
