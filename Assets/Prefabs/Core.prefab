@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 114465832139625392}
   - component: {fileID: 114924280328992200}
   - component: {fileID: 114573424801250904}
-  - component: {fileID: 114050176631394020}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -385,47 +384,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &114050176631394020
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1028709601126426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40b3b8c74987a8041958b605e362a25b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes:
-    - Name: Panels
-      Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[Controllers.PanelName, Assembly-CSharp],[PanelBase,
-        Assembly-CSharp]], mscorlib
-    - Name: comparer
-      Entry: 7
-      Data: 1|System.Collections.Generic.EqualityComparer`1+DefaultComparer[[Controllers.PanelName,
-        Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-  ActivePanel: {fileID: 0}
 --- !u!114 &114193724398328844
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -508,11 +466,11 @@ MonoBehaviour:
   Players:
   - {fileID: 1759715217430156}
   - {fileID: 1561485614632498}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1517483404838894}
+  - {fileID: 1804887914813610}
   LevelController: {fileID: 114924280328992200}
-  SkillController: {fileID: 114573424801250904}
-  PanelController: {fileID: 114050176631394020}
+  SpellController: {fileID: 0}
+  PanelController: {fileID: 0}
 --- !u!114 &114533461867108438
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -535,6 +493,87 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9a39128091ff124b84a44c2044d0fb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 114291287536208840, guid: 95388b7eef2e69143a2a96a13c7fe7c5, type: 2}
+    - {fileID: 114291287536208840, guid: 65b2442549c679c4e8b4e568015e7460, type: 2}
+    - {fileID: 114291287536208840, guid: d964364c72b5d434e98ebbbf3fcdd064, type: 2}
+    - {fileID: 114291287536208840, guid: 72423a73b3edaf249bfad611c2b18944, type: 2}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: AllSpellIcons
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[SpellType, Assembly-CSharp],[SpellItem,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.EqualityComparer`1+DefaultComparer[[SpellType,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
 --- !u!114 &114924280328992200
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -546,6 +585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d4b19f672bb25e489c951d131b6c071, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SpellPoints: []
 --- !u!212 &212148657592753204
 SpriteRenderer:
   m_ObjectHideFlags: 1
