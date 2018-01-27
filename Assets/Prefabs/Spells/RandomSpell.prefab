@@ -35,9 +35,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4912208688979046}
-  - component: {fileID: 114812519542868804}
+  - component: {fileID: 114903160880311378}
   m_Layer: 0
-  m_Name: TaserSpell
+  m_Name: RandomSpell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54,7 +54,7 @@ GameObject:
   - component: {fileID: 61742216521487934}
   m_Layer: 0
   m_Name: Colldier
-  m_TagString: Untagged
+  m_TagString: Spell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,7 +125,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &114812519542868804
+--- !u!114 &114903160880311378
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1156987310806566}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 728d75772a092164ab40c21dd006557f, type: 3}
+  m_Script: {fileID: 11500000, guid: d1fded7ce6611fc4799151f32941c84f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
@@ -145,7 +145,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  SpellSprite: {fileID: 21300000, guid: fc058463f563dd44ab46100ba340e94e, type: 3}
+  SpellSprite: {fileID: 21300000, guid: bffadb69a86efee40802bd92b64a569a, type: 3}
   Radius: 0.2
   Charge: 10
   Delay: 0
@@ -184,7 +184,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fc058463f563dd44ab46100ba340e94e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bffadb69a86efee40802bd92b64a569a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
