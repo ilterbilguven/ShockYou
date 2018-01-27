@@ -16,6 +16,7 @@ public class LevelLobbyPanel : PanelBase
     public List<ReadyAreaItem> PlayerReadySubPanels;
 
     private LevelTypes _lvltype;
+    private Transform[] _spawnPoints;
 
     void OnEnable()
     {
@@ -76,9 +77,22 @@ public class LevelLobbyPanel : PanelBase
             yield return new WaitForSeconds(1f);
             countdown--;
             //Play audio
+
+            if (PlayerReadySubPanels[0].IsReady && PlayerReadySubPanels[1].IsReady && PlayerReadySubPanels[2].IsReady &&
+                PlayerReadySubPanels[3].IsReady)
+                break;
         }
         //LoadLevel with given type
+        StartLevel(_spawnPoints);
+    }
+
+    void StartLevel(Transform[] spawnPoints)
+    {
         SceneManager.LoadScene((int)_lvltype);
-        
+        for (int i = 0; i < 4; i++)
+        {
+            GameController.Instance.Players[i].GetComponent<Rigidbody2D>().simulated = true;
+        }
+        //Activate players;
     }
 }

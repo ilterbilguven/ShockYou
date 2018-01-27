@@ -397,7 +397,7 @@ MonoBehaviour:
   PlayerID: 1
   MinGroundNormalY: 0.65
   GravityModifier: 1
-  JumpTakeOffSpeed: 11
+  JumpTakeOffSpeed: 13
   MaxSpeed: 7
   Rb2D: {fileID: 50684736192657888}
   Health: 0
@@ -417,7 +417,7 @@ MonoBehaviour:
   PlayerID: 3
   MinGroundNormalY: 0.65
   GravityModifier: 1
-  JumpTakeOffSpeed: 11
+  JumpTakeOffSpeed: 13
   MaxSpeed: 7
   Rb2D: {fileID: 50379370677869442}
   Health: 0
@@ -437,7 +437,7 @@ MonoBehaviour:
   PlayerID: 2
   MinGroundNormalY: 0.65
   GravityModifier: 1
-  JumpTakeOffSpeed: 11
+  JumpTakeOffSpeed: 13
   MaxSpeed: 7
   Rb2D: {fileID: 50654598874529402}
   Health: 0
@@ -457,7 +457,7 @@ MonoBehaviour:
   PlayerID: 0
   MinGroundNormalY: 0.65
   GravityModifier: 1
-  JumpTakeOffSpeed: 11
+  JumpTakeOffSpeed: 13
   MaxSpeed: 7
   Rb2D: {fileID: 50944502479762346}
   Health: 0
