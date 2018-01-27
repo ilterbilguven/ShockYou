@@ -16,7 +16,6 @@ public class LevelLobbyPanel : PanelBase
     public List<ReadyAreaItem> PlayerReadySubPanels;
 
     private LevelTypes _lvltype;
-    private Transform[] _spawnPoints;
 
     void OnEnable()
     {
@@ -52,7 +51,6 @@ public class LevelLobbyPanel : PanelBase
 
     private void MarkdownPlayerReady(string id, bool ready)
     {
-        Debug.Log("Ready Button Pressed");
         Color color = PlayerReadySubPanels[Int32.Parse(id)].transform.GetChild(1).GetComponent<Image>().color;
         if (isActiveAndEnabled)
         {
@@ -65,7 +63,8 @@ public class LevelLobbyPanel : PanelBase
                 color = ReadyColor;
             }
         }
-        PlayerReadySubPanels[Int32.Parse(id)].transform.GetChild(1).GetComponent<Image>().color = color;
+        PlayerReadySubPanels[Int32.Parse(id)].PanelImage.color = color;
+        PlayerReadySubPanels[Int32.Parse(id)].IsReady = ready;
     }
 
     IEnumerator StartCountdown()
@@ -83,15 +82,25 @@ public class LevelLobbyPanel : PanelBase
                 break;
         }
         //LoadLevel with given type
-        StartLevel(_spawnPoints);
+        StartLevel();
     }
 
-    void StartLevel(Transform[] spawnPoints)
+    void StartLevel()
     {
         SceneManager.LoadScene((int)_lvltype);
+
+        GameController.Instance.LevelStarted += LevelStarted;
+    }
+
+    private void LevelStarted()
+    {
         for (int i = 0; i < 4; i++)
         {
             GameController.Instance.Players[i].GetComponent<Rigidbody2D>().simulated = true;
+            GameController.Instance.Players[i].transform.localPosition = GameController.Instance.LevelController.SpawnPoints[i].position;
+            Color c = GameController.Instance.Players[i].GetComponent<SpriteRenderer>().color;
+            c.a = 255;
+            GameController.Instance.Players[i].GetComponent<SpriteRenderer>().color = c;
         }
         //Activate players;
     }

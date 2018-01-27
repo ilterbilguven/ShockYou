@@ -217,7 +217,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1.5
+  m_GravityScale: 0.4
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -237,7 +237,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1.5
+  m_GravityScale: 0.4
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -257,7 +257,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1.5
+  m_GravityScale: 0.4
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -277,7 +277,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1.5
+  m_GravityScale: 0.4
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -397,7 +397,7 @@ MonoBehaviour:
   PlayerID: 1
   MinGroundNormalY: 0.65
   GravityModifier: 1
-  JumpTakeOffSpeed: 13
+  JumpTakeOffSpeed: 9
   MaxSpeed: 7
   Rb2D: {fileID: 50684736192657888}
   Health: 0
@@ -417,7 +417,7 @@ MonoBehaviour:
   PlayerID: 3
   MinGroundNormalY: 0.65
   GravityModifier: 1
-  JumpTakeOffSpeed: 13
+  JumpTakeOffSpeed: 9
   MaxSpeed: 7
   Rb2D: {fileID: 50379370677869442}
   Health: 0
@@ -437,7 +437,7 @@ MonoBehaviour:
   PlayerID: 2
   MinGroundNormalY: 0.65
   GravityModifier: 1
-  JumpTakeOffSpeed: 13
+  JumpTakeOffSpeed: 9
   MaxSpeed: 7
   Rb2D: {fileID: 50654598874529402}
   Health: 0
@@ -457,7 +457,7 @@ MonoBehaviour:
   PlayerID: 0
   MinGroundNormalY: 0.65
   GravityModifier: 1
-  JumpTakeOffSpeed: 13
+  JumpTakeOffSpeed: 9
   MaxSpeed: 7
   Rb2D: {fileID: 50944502479762346}
   Health: 0
