@@ -12,11 +12,7 @@ MonoBehaviour:
   m_Name: InspectorConfig
   m_EditorClassIdentifier: 
   enableOdinInInspector: 1
-<<<<<<< HEAD
-  defaultEditorBehaviour: 11
-=======
   defaultEditorBehaviour: 15
->>>>>>> master
   processMouseMoveInInspector: 1
   drawingConfig:
     configs: []
