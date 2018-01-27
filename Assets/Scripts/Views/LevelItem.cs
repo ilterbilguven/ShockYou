@@ -24,7 +24,7 @@ public class LevelItem : MonoBehaviour {
         for (int i = 0; i < 4; i++)
         {
             GameController.Instance.Players[i].SetActive(true);
-            GameController.Instance.Players[i].GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+            GameController.Instance.Players[i].GetComponent<Rigidbody2D>().simulated = false;
         }
 
         LevelLobbyPanel slp = (LevelLobbyPanel)panel;
