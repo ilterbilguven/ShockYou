@@ -7,6 +7,7 @@ namespace Controllers
     public class GameController : MonoBehaviour
     {
         public List<GameObject> Players;
+        [HideInInspector]
         public LevelController LevelController;
         public SpellController SpellController;
         public PanelController PanelController;

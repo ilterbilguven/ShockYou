@@ -11,6 +11,4 @@ public class ReadyAreaItem : MonoBehaviour
     public SpriteRenderer ShowcaseSprite;
     public Image PanelImage;
     public Color Ready, NotReady;
-
-    
 }

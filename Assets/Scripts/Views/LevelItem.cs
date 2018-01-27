@@ -14,6 +14,7 @@ public class LevelItem : MonoBehaviour {
 
     public LevelTypes levelType;
     public Image LevelImage;
+    public Sprite LevelBackground;
     public Text LevelNameText;
 
 
@@ -32,7 +33,7 @@ public class LevelItem : MonoBehaviour {
 
         LevelLobbyPanel slp = (LevelLobbyPanel)panel;
 
-        slp.StartLevel(levelType, LevelImage.sprite);
+        slp.StartLevel(levelType, LevelBackground);
 
     }
 }

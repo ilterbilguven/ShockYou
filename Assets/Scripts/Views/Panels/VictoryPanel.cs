@@ -1,4 +1,5 @@
-﻿using Controllers;
+﻿using System;
+using Controllers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,8 @@ using UnityEngine.UI;
 public class VictoryPanel : PanelBase
 {
     public Text Header;
+    [SerializeField]
+    public List<PlayerEntry> Players;
     public Image Player1Image;
     public Text Player1Score;
     public Image Player2Image;
@@ -72,6 +75,13 @@ public class VictoryPanel : PanelBase
             Debug.LogError("Victory panel player list is smaller than 2 player");
             return;
         }
+    }
+
+    [Serializable]
+    public class PlayerEntry
+    {
+        public Image PlayerImage;
+        public Text PlayerScore;
     }
     
 }

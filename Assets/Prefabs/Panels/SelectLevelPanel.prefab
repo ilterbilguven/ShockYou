@@ -392,7 +392,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 2ef51e66c7875db4eb93ff785aaa5196, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6c545a767c85a4c45aed2a899311ffcc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -446,6 +446,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelType: 3
   LevelImage: {fileID: 114994807181331224}
+  LevelBackground: {fileID: 0}
   LevelNameText: {fileID: 114055954338678294}
 --- !u!114 &114088658222402736
 MonoBehaviour:
@@ -632,6 +633,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelType: 1
   LevelImage: {fileID: 114007614376295618}
+  LevelBackground: {fileID: 21300000, guid: 2ef51e66c7875db4eb93ff785aaa5196, type: 3}
   LevelNameText: {fileID: 114216641082177252}
 --- !u!114 &114319599628595588
 MonoBehaviour:
@@ -908,6 +910,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelType: 2
   LevelImage: {fileID: 114849771287557232}
+  LevelBackground: {fileID: 0}
   LevelNameText: {fileID: 114799852729013008}
 --- !u!114 &114585931854902252
 MonoBehaviour:
@@ -936,6 +939,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelType: 4
   LevelImage: {fileID: 114410985782668182}
+  LevelBackground: {fileID: 0}
   LevelNameText: {fileID: 114228848894380734}
 --- !u!114 &114685648363882118
 MonoBehaviour:
@@ -1129,7 +1133,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 0d7cc094ccd8f9940ae10d21859ce434, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2e120afd63bb10a4291c1f1da808df40, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

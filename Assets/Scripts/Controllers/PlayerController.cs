@@ -29,6 +29,7 @@ namespace Controllers
         public PlayerTypes PlayerType;
         [HideInInspector]
         public ushort Score = 0;
+        public Animator Animator;
         public SpriteRenderer _spriteRenderer;
 
         [SerializeField] private Vector2 _targetVelocity;
@@ -39,7 +40,7 @@ namespace Controllers
         private ContactFilter2D _contactFilter;
         private RaycastHit2D[] _hitBuffer = new RaycastHit2D[16];
         private List<RaycastHit2D> _hitBufferList = new List<RaycastHit2D>(16);
-        private Animator _animator;
+        
 
         private const float MinMoveDistance = 0.001f;
         private const float ShellRadius = 0.01f;
@@ -52,8 +53,11 @@ namespace Controllers
 
         void Awake()
         {
+            Animator = Container.GetComponent<Animator>();
             Rb2D.freezeRotation = true;
             _ready = false;
+            Animator.Play("Idle");
+
         }
 
         void Update()
@@ -142,6 +146,10 @@ namespace Controllers
 
             bool flipSprite = (_spriteRenderer.flipX ? (move.x > 0.01f) : (move.x < 0.01f));
 
+
+            //_animator.SetBool("grounded", _grounded);
+            //_animator.SetFloat("velocityX", Mathf.Abs(_velocity.x) / MaxSpeed);
+
             //Below's for sprite and animator controls, no idea what they do.
             /*
             //if (flipSprite)
@@ -149,8 +157,6 @@ namespace Controllers
             //    _spriteRenderer.flipX = !_spriteRenderer.flipX;
             //}
 
-            //_animator.SetBool("grounded", _grounded);
-            //_animator.SetFloat("velocityX", Mathf.Abs(_velocity.x) / MaxSpeed);
             */
 
             _targetVelocity = move * MaxSpeed;
