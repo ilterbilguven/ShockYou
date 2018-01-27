@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -35,6 +36,11 @@ namespace Controllers
             Rb2D.freezeRotation = true;
         }
 
+        private void OnEnable()
+        {
+            StartCoroutine(Charge());
+        }
+        
         void Update()
         {
             _targetVelocity = Vector2.zero;
@@ -136,6 +142,45 @@ namespace Controllers
                 //Do sth
                 Debug.LogError("Player" + (Int32.Parse(PlayerID) + 1) + " has used FIRE!");
             }
+        }
+
+        public ushort Health = 0;
+        
+        private bool _charge;
+        public ushort ChargeAmount = 0;
+        public float ChargeRate = 0.5f;
+        
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            if (other.collider.CompareTag("Charging"))
+            {
+                _charge = true;
+            }
+            else if (other.collider.CompareTag("Hand"))
+            {
+                GetElectrocuted();
+            }
+        }
+
+        private void OnCollisionExit2D(Collision2D other)
+        {
+            if (other.collider.CompareTag("Charging"))
+            {
+                _charge = false;
+            }
+        }
+
+        public void GetElectrocuted()
+        {
+
+        }
+
+        private IEnumerator Charge()
+        {
+            yield return new WaitUntil(() => _charge);
+            ChargeAmount++;
+            yield return new WaitForSecondsRealtime(ChargeRate);
+            StartCoroutine(Charge());
         }
     }
 }

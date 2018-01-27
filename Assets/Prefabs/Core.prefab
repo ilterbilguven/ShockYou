@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114573424801250904}
   m_Layer: 0
   m_Name: GameController
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 212430830870159442}
   m_Layer: 0
   m_Name: Player 3
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62,7 +62,7 @@ GameObject:
   - component: {fileID: 212530581127585144}
   m_Layer: 0
   m_Name: Player 2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 212148657592753204}
   m_Layer: 0
   m_Name: Player 1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 212517443959378144}
   m_Layer: 0
   m_Name: Player 4
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -401,6 +401,9 @@ MonoBehaviour:
   JumpTakeOffSpeed: 11
   MaxSpeed: 7
   Rb2D: {fileID: 50684736192657888}
+  Health: 0
+  ChargeAmount: 0
+  ChargeRate: 0.5
 --- !u!114 &114230613737202080
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -418,6 +421,9 @@ MonoBehaviour:
   JumpTakeOffSpeed: 11
   MaxSpeed: 7
   Rb2D: {fileID: 50379370677869442}
+  Health: 0
+  ChargeAmount: 0
+  ChargeRate: 0.5
 --- !u!114 &114301338367765228
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -435,6 +441,9 @@ MonoBehaviour:
   JumpTakeOffSpeed: 11
   MaxSpeed: 7
   Rb2D: {fileID: 50654598874529402}
+  Health: 0
+  ChargeAmount: 0
+  ChargeRate: 0.5
 --- !u!114 &114317870303160878
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -452,6 +461,9 @@ MonoBehaviour:
   JumpTakeOffSpeed: 11
   MaxSpeed: 7
   Rb2D: {fileID: 50944502479762346}
+  Health: 0
+  ChargeAmount: 0
+  ChargeRate: 0.5
 --- !u!114 &114465832139625392
 MonoBehaviour:
   m_ObjectHideFlags: 1
