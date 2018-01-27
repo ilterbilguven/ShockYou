@@ -174,28 +174,18 @@ namespace Controllers
             {
                 if (other.transform.childCount > 0)
                 {
-                    // Static hit only.
-                    //var spell = other.gameObject.GetComponent<HandController>().SpellInHand;
-
                     GameController.Instance.SpellController.StaticSpell(this, other.gameObject.GetComponent<PlayerController>());
-                    //if (spell.Radius <= 0.2f)
-                    //{
-                    //    Debug.Log("ELECTROCUTED!");
-                    //    GetElectrocuted(spell.Charge);
-                    //    Destroy(spell.gameObject);
-                    //}
-                    //other.transform.GetComponentInChildren<BaseSpell>().Collider.enabled = true;
                 }
                 else
                 {
-                    GetElectrocuted(other.collider.GetComponentInParent<PlayerController>().ChargeAmount);
-                    ChargeAmount = 0;
+                    Debug.LogError("It shouldnt enter here");
                 }
             }
             else if (other.collider.CompareTag("Spell"))
             {
-                GetElectrocuted(other.transform.GetComponentInChildren<BaseSpell>().Charge);
-                Destroy(other.gameObject);
+                BaseSpell usedSpell = other.gameObject.GetComponent<BaseSpell>();
+                usedSpell.UseSpell();
+                //Destroy(other.gameObject);
             }
         }
 

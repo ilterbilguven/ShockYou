@@ -10,7 +10,7 @@ public enum SpellType
     Static = 0,
     Battery = 1,
     Taser = 2,
-    Baloon = 3,
+    Balloon = 3,
     Random = 42,
 }
 
@@ -34,7 +34,7 @@ public class SpellController : SerializedMonoBehaviour
     {
         _levelController = GameController.Instance.LevelController;
         _spellSpanPoints = _levelController.SpellPoints;
-        SpawnSpells(2);
+        SpawnSpells(5);
     }
 
     private void SpawnSpells(int howManySpellToSpawn)
@@ -75,17 +75,36 @@ public class SpellController : SerializedMonoBehaviour
         return spell;
     }
 
-
     #region Spell action functions
 
     public void StaticSpell(PlayerController sender, PlayerController receiver)
     {
         int damageAmount = sender.ChargeAmount;
-        
+
         // Player statics other player, collision is made by 
-        Debug.Log(sender.PlayerID + " gave " +  damageAmount + " static damage to " + receiver.PlayerID);
+        Debug.Log(sender.PlayerID + " gave " + damageAmount + " static damage to " + receiver.PlayerID);
     }
-    
+
+    //public void BatterySpell(PlayerController sender, PlayerController receiver)
+    //{
+    //    int baseDamage = sender.ChargeAmount;
+
+    //    Debug.Log(sender.PlayerID + " gave " + baseDamage + " BATTERY damage to " + receiver.PlayerID);
+    //}
+
+    //public void TaserSpell(PlayerController sender, PlayerController receiver)
+    //{
+    //    int baseDamage = sender.ChargeAmount;
+
+    //    Debug.Log(sender.PlayerID + " gave " + baseDamage+75 + " TASER damage to " + receiver.PlayerID);
+    //}
+
+    //public void BaloonSpell(PlayerController user)
+    //{
+    //    Debug.Log(user.PlayerID + " has gained 25 charge from BALOON spell");
+    //}
+
+
     #endregion
 
 

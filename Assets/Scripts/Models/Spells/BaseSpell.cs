@@ -12,4 +12,9 @@ public class BaseSpell : SerializedMonoBehaviour
     public float Delay = 0;
 
     public Collider2D Collider;
+
+    public virtual void UseSpell()
+    {
+
+    }
 }

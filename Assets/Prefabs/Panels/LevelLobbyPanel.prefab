@@ -714,7 +714,7 @@ MonoBehaviour:
   NotReadyColor: {r: 0.9852941, g: 0, b: 0, a: 1}
   BackgroundImage: {fileID: 114203453757681202}
   CountdownText: {fileID: 114259018231591558}
-  Countdown: 10
+  Countdown: 3
   PlayerReadySubPanels:
   - {fileID: 114454897992597472}
   - {fileID: 114479137433635910}

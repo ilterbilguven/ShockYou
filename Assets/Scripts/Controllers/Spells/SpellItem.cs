@@ -29,6 +29,6 @@ public class SpellItem : MonoBehaviour {
         GameController.Instance.SpellController.AddSpellToPlayer(spellType, player);
         
         LeanTween.cancel(_waveAnimation.uniqueId);
-        Destroy(this);
+        Destroy(gameObject);
     }
 }
