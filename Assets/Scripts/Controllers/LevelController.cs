@@ -21,6 +21,11 @@ namespace Controllers
             StartCoroutine(LevelTimer());
         }
 
+        private void OnDisable()
+        {
+            StopCoroutine(LevelTimer());
+        }
+
         IEnumerator LevelTimer()
         {
             LevelTimeText.color = new Color(1, 1, 1, 0.25f);
@@ -41,11 +46,18 @@ namespace Controllers
                 SetLevelTimerText(--localLevelTime);
                 yield return new WaitForSeconds(1f);
             }
+
+            TimeEnded();
         }
 
         private void SetLevelTimerText(int timeLeftAsSeconds)
         {
             LevelTimeText.text = timeLeftAsSeconds.ToString();
+        }
+
+        private void TimeEnded()
+        {
+            GameController.Instance.PanelController.OpenPanel(PanelName.VictoryPanel);
         }
     }
 }

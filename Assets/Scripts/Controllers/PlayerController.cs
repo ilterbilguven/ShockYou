@@ -16,6 +16,8 @@ namespace Controllers
         
     public class PlayerController : MonoBehaviour
     {
+        public Transform Container;
+
         // ReSharper disable once InconsistentNaming
         public string PlayerID;
         public float MinGroundNormalY = .65f;
@@ -27,6 +29,7 @@ namespace Controllers
         public PlayerTypes PlayerType;
         [HideInInspector]
         public ushort Score = 0;
+        public SpriteRenderer _spriteRenderer;
 
         private Vector2 _targetVelocity;
         private Vector2 _groundNormal;
@@ -36,26 +39,25 @@ namespace Controllers
         private ContactFilter2D _contactFilter;
         private RaycastHit2D[] _hitBuffer = new RaycastHit2D[16];
         private List<RaycastHit2D> _hitBufferList = new List<RaycastHit2D>(16);
-        private SpriteRenderer _spriteRenderer;
         private Animator _animator;
 
         private const float MinMoveDistance = 0.001f;
         private const float ShellRadius = 0.01f;
 
+        public ushort Health = 0;
+        private bool _charge;
+        public ushort ChargeAmount = 0;
+        public float ChargeRate = 0.5f;
+
         void Awake()
         {
-            _spriteRenderer = GetComponent<SpriteRenderer>();
-            _animator = GetComponent<Animator>();
-            Rb2D = GetComponent<Rigidbody2D>();
+            //_spriteRenderer = GetComponent<SpriteRenderer>();
+            //_animator = GetComponent<Animator>();
+            //Rb2D = GetComponent<Rigidbody2D>();
             Rb2D.freezeRotation = true;
             _ready = false;
         }
 
-        private void OnEnable()
-        {
-            StartCoroutine(Charge());
-        }
-        
         void Update()
         {
             _targetVelocity = Vector2.zero;
@@ -82,6 +84,8 @@ namespace Controllers
 
             Movement(move, true);
         }
+
+        
 
         void Movement(Vector2 move, bool yMovement)
         {
@@ -164,12 +168,6 @@ namespace Controllers
             }
         }
 
-        public ushort Health = 0;
-        
-        private bool _charge;
-        public ushort ChargeAmount = 0;
-        public float ChargeRate = 0.5f;
-        
         private void OnCollisionEnter2D(Collision2D other)
         {
             if (other.collider.CompareTag("Charging"))

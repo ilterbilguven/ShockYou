@@ -12,6 +12,7 @@ namespace Controllers
         public PanelController PanelController;
 
         public Action LevelStarted;
+        public Action LevelEnded;
 
         [SerializeField]
         public Dictionary<PlayerTypes, Sprite> playerPics = new Dictionary<PlayerTypes, Sprite>();

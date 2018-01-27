@@ -30,7 +30,7 @@ public class LevelLobbyPanel : PanelBase
         for (int i = 0; i < PlayerReadySubPanels.Count; i++)
         {
             PlayerReadySubPanels[i].PanelImage.color = NotReadyColor;
-            PlayerReadySubPanels[i].ShowcaseSprite.sprite = GameController.Instance.Players[i].GetComponent<SpriteRenderer>().sprite;
+            //PlayerReadySubPanels[i].ShowcaseSprite.sprite = GameController.Instance.Players[i].;
         }
 
     }
@@ -105,16 +105,18 @@ public class LevelLobbyPanel : PanelBase
 
     private void LevelStarted()
     {
+        GameController.Instance.PanelController.ActivePanel.gameObject.SetActive(false);
+        GameController.Instance.PanelController.ActivePanel = null;
+
         for (int i = 0; i < 4; i++)
         {
             if (PlayerReadySubPanels[i].IsReady)
             {
-                GameController.Instance.Players[i].GetComponent<Rigidbody2D>().simulated = true;
-                GameController.Instance.Players[i].transform.localPosition = GameController.Instance.LevelController.SpawnPoints[i].position;
-                Color c = GameController.Instance.Players[i].GetComponent<SpriteRenderer>().color;
-                c.a = 255;
-                GameController.Instance.Players[i].GetComponent<SpriteRenderer>().color = c;
-                GameController.Instance.Players[i].GetComponent<PlayerController>().Score = 0;
+                GameObject player = GameController.Instance.Players[i];
+                player.GetComponent<Rigidbody2D>().simulated = true;
+                player.GetComponent<PlayerController>().Container.gameObject.SetActive(true);
+                player.transform.localPosition = GameController.Instance.LevelController.SpawnPoints[i].position;
+                player.GetComponent<PlayerController>().Score = 0;
             }
         }
         //Activate players;

@@ -23,11 +23,11 @@ public class LevelItem : MonoBehaviour {
 
         for (int i = 0; i < 4; i++)
         {
-            GameController.Instance.Players[i].SetActive(true);
-            GameController.Instance.Players[i].GetComponent<Rigidbody2D>().simulated = false;
-            Color disabledVersion = GameController.Instance.Players[i].GetComponent<SpriteRenderer>().color;
-            disabledVersion.a = 0f;
-            GameController.Instance.Players[i].GetComponent<SpriteRenderer>().color = disabledVersion;
+            GameObject player = GameController.Instance.Players[i];
+
+            player.GetComponent<PlayerController>().Container.gameObject.SetActive(false);
+            player.SetActive(true);
+            player.GetComponent<Rigidbody2D>().simulated = false;
         }
 
         LevelLobbyPanel slp = (LevelLobbyPanel)panel;
