@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class VictoryPanel : PanelBase {
-
+public class VictoryPanel : PanelBase
+{
+    public Text Header;
     public Image Player1Image;
     public Text Player1Score;
     public Image Player2Image;
@@ -15,10 +16,14 @@ public class VictoryPanel : PanelBase {
     public Image Player4Image;
     public Text Player4Score;
 
+    private LTDescr _waveZoomAnimation;
+
     private List<PlayerController> _playerList = new List<PlayerController>();
 
     private void OnEnable()
     {
+        PlayWaveZoomAnimation();
+        
         foreach (var item in GameController.Instance.Players)
         {
             _playerList.Add(item.GetComponent<PlayerController>());
@@ -27,7 +32,13 @@ public class VictoryPanel : PanelBase {
 
     private void OnDisable()
     {
+        LeanTween.cancel(_waveZoomAnimation.uniqueId);
         _playerList.Clear();
+    }
+
+    private void PlayWaveZoomAnimation()
+    {
+        _waveZoomAnimation = LeanTween.scale(Header.gameObject, Header.gameObject.transform.localScale + new Vector3(0.3f, 0.3f, 0.3f), 1.2f).setRepeat(-1).setLoopPingPong(3);
     }
 
     public void Open(List<PlayerController> playerList)
