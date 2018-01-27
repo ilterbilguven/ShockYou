@@ -21,8 +21,8 @@ public class SpellItem : MonoBehaviour {
 
     private void PlayWaveAnimation()
     {
-        _waveAnimation = LeanTween.moveLocalY(this.gameObject, this.transform.localPosition.y + 5, 1f)
-            .setFrom(this.transform.localPosition.y - 5)
+        _waveAnimation = LeanTween.moveLocalY(this.gameObject, this.transform.localPosition.y + 0.3f, 0.7f)
+            .setFrom(this.transform.localPosition.y - 0.3f)
             .setRepeat(-1)
             .setLoopPingPong(-1);
     }
