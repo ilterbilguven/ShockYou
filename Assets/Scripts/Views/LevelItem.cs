@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Controllers;
+﻿using Controllers;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,6 +20,13 @@ public class LevelItem : MonoBehaviour {
     public void OnLevelItemClicked()
     {
         PanelBase panel = GameController.Instance.PanelController.Panels[PanelName.LevelLobbyPanel];
+
+        for (int i = 0; i < 4; i++)
+        {
+            GameController.Instance.Players[i].SetActive(true);
+            GameController.Instance.Players[i].GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+        }
+
         LevelLobbyPanel slp = (LevelLobbyPanel)panel;
 
         slp.StartLevel(levelType, LevelImage.sprite);
