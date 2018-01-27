@@ -9,7 +9,8 @@ using UnityEngine.UI;
 public enum PanelName
 {
     MainMenuPanel = 1,
-    SelectLevelPanel = 2
+    SelectLevelPanel = 2,
+    LevelLobbyPanel = 3
 }
 
 public class PanelController : SerializedMonoBehaviour {

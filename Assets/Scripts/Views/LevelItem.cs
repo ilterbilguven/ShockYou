@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Controllers;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,6 +21,11 @@ public class LevelItem : MonoBehaviour {
 
     public void OnLevelItemClicked()
     {
-        Application.LoadLevel((int)levelType);
+        PanelBase panel = GameController.Instance.PanelController.Panels[PanelName.LevelLobbyPanel];
+        LevelLobbyPanel slp = (LevelLobbyPanel)panel;
+
+        slp.StartLevel(levelType, LevelImage.sprite);
+        //GameController.Instance.PanelController.OpenPanel(PanelName.LevelLobbyPanel);
+
     }
 }
