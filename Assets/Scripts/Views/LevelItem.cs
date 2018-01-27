@@ -25,12 +25,14 @@ public class LevelItem : MonoBehaviour {
         {
             GameController.Instance.Players[i].SetActive(true);
             GameController.Instance.Players[i].GetComponent<Rigidbody2D>().simulated = false;
+            Color disabledVersion = GameController.Instance.Players[i].GetComponent<SpriteRenderer>().color;
+            disabledVersion.a = 0f;
+            GameController.Instance.Players[i].GetComponent<SpriteRenderer>().color = disabledVersion;
         }
 
         LevelLobbyPanel slp = (LevelLobbyPanel)panel;
 
         slp.StartLevel(levelType, LevelImage.sprite);
-        //GameController.Instance.PanelController.OpenPanel(PanelName.LevelLobbyPanel);
 
     }
 }
