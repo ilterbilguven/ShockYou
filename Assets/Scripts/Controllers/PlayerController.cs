@@ -194,7 +194,7 @@ namespace Controllers
                     Debug.LogError("SpellItem component is null");
                     return;
                 }
-                GameController.Instance.SpellController.SpellCollected(PlayerID, spell.SpellType);
+                spell.SpellCollected(PlayerID, spell.SpellType);
             }
         }
     }

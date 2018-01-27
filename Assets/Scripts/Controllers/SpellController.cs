@@ -45,17 +45,11 @@ public class SpellController : SerializedMonoBehaviour
             SpellItem spawningspell = AllSpellIcons[(SpellType)randomNumber];
 
             // Choose random position from pos list
-            randomNumber = rand.Next(0, _spellSpanPoints.Count);
-            Transform spellSpawnPos = _spellSpanPoints[randomNumber];
+            int randomNumber2 = rand.Next(0, _spellSpanPoints.Count);
+            Transform spellSpawnPos = _spellSpanPoints[randomNumber2];
 
             // Spawn prefab at that location
             Instantiate(spawningspell, spellSpawnPos.transform.localPosition, Quaternion.identity);
         }
-    }
-
-    public void SpellCollected(string playerID, SpellType spellType)
-    {
-        Debug.Log("Player ID:" + playerID);
-        Debug.Log("Spell Type:" + spellType);
     }
 }
