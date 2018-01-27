@@ -31,9 +31,9 @@ namespace Controllers
         public ushort Score = 0;
         public SpriteRenderer _spriteRenderer;
 
-        private Vector2 _targetVelocity;
+        [SerializeField] private Vector2 _targetVelocity;
         private Vector2 _groundNormal;
-        private Vector2 _velocity;
+        [SerializeField] private Vector2 _velocity;
         private bool _grounded;
         private bool _ready;
         private ContactFilter2D _contactFilter;
@@ -46,7 +46,7 @@ namespace Controllers
 
         public HandController PlayerHand;
         public ushort Health = 0;
-        private bool _charge;
+        [SerializeField] private bool _charge;
         public ushort ChargeAmount = 0;
         public float ChargeRate = 0.5f;
 
@@ -61,6 +61,11 @@ namespace Controllers
             _targetVelocity = Vector2.zero;
             ComputeVelocity();
             Fire();
+        }
+
+        private void OnEnable()
+        {
+            StartCoroutine(Charge());
         }
 
         void FixedUpdate()
@@ -166,11 +171,8 @@ namespace Controllers
 
         private void OnCollisionEnter2D(Collision2D other)
         {
-            if (other.collider.CompareTag("Charging"))
-            {
-                _charge = true;
-            }
-            else if (other.collider.CompareTag("Hand"))
+            
+            if (other.collider.CompareTag("Hand"))
             {
                 if (other.transform.childCount > 0)
                 {
@@ -187,6 +189,11 @@ namespace Controllers
                 usedSpell.UseSpell();
                 //Destroy(other.gameObject);
             }
+        }
+
+        private void OnCollisionStay2D(Collision2D other)
+        {
+            _charge = other.collider.CompareTag("Charging") && Mathf.Abs(_velocity.x) > Mathf.Epsilon;
         }
 
         private void OnCollisionExit2D(Collision2D other)
