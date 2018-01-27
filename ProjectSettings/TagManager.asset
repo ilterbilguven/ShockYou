@@ -9,6 +9,7 @@ TagManager:
   - Neutral
   - Item
   - SpellItem
+  - Spell
   layers:
   - Default
   - TransparentFX

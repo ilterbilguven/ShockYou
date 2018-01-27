@@ -158,7 +158,14 @@ namespace Controllers
             }
             else if (other.collider.CompareTag("Hand"))
             {
-                GetElectrocuted();
+                if (other.transform.childCount > 0)
+                {
+                    other.transform.GetComponentInChildren<BaseSpell>();
+                }
+                else
+                {
+                    GetElectrocuted();
+                }
             }
         }
 

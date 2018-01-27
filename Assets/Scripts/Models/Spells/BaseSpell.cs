@@ -5,5 +5,6 @@ using UnityEngine;
 
 public class BaseSpell : SerializedMonoBehaviour
 {
-
+    public float Radius = 0.2f;
+    public uint Charge = 10;
 }
