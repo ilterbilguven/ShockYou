@@ -23,29 +23,29 @@ namespace Controllers
 
         IEnumerator LevelTimer()
         {
-            LevelTimeText.color = Color.white;
+            LevelTimeText.color = new Color(1, 1, 1, 0.25f);
+
             int localLevelTime = LevelTime;
 
             while(localLevelTime >= 10)
             {
-                localLevelTime--;
+                SetLevelTimerText(--localLevelTime);
                 yield return new WaitForSeconds(1f);
             }
 
             Debug.Log("Last 10 seconds");
-            LevelTimeText.color = Color.red;
+            LevelTimeText.color = new Color(1,0,0,0.25f);
 
             while (localLevelTime > 0)
             {
-                localLevelTime--;
+                SetLevelTimerText(--localLevelTime);
                 yield return new WaitForSeconds(1f);
             }
         }
 
         private void SetLevelTimerText(int timeLeftAsSeconds)
         {
-            TimeSpan t = TimeSpan.FromSeconds(timeLeftAsSeconds);
-            LevelTimeText.text = TimeSpan.FromMinutes(timeLeftAsSeconds) + ":" + timeLeftAsSeconds % 60;
+            LevelTimeText.text = timeLeftAsSeconds.ToString();
         }
     }
 }
