@@ -8,10 +8,9 @@ namespace Controllers
 
         public List<Transform> SpellPoints;
                 
-        public void StartLevel()
+        void OnEnable()
         {
             // Set some things here
-
             GameController.Instance.LevelController = this;
             GameController.Instance.LevelStarted.Invoke();
         }

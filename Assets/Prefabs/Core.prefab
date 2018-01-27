@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4598684034541028}
   - component: {fileID: 114465832139625392}
-  - component: {fileID: 114924280328992200}
   - component: {fileID: 114573424801250904}
   m_Layer: 0
   m_Name: GameController
@@ -480,7 +479,7 @@ MonoBehaviour:
   - {fileID: 1561485614632498}
   - {fileID: 1517483404838894}
   - {fileID: 1804887914813610}
-  LevelController: {fileID: 114924280328992200}
+  LevelController: {fileID: 0}
   SpellController: {fileID: 114573424801250904}
   PanelController: {fileID: 0}
 --- !u!114 &114533461867108438
@@ -508,7 +507,11 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 114291287536208840, guid: 95388b7eef2e69143a2a96a13c7fe7c5, type: 2}
+    - {fileID: 114291287536208840, guid: 65b2442549c679c4e8b4e568015e7460, type: 2}
+    - {fileID: 114291287536208840, guid: d964364c72b5d434e98ebbbf3fcdd064, type: 2}
+    - {fileID: 114291287536208840, guid: 72423a73b3edaf249bfad611c2b18944, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -527,25 +530,61 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 3
       Data: 0
+    - Name: 
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 
     - Name: 
       Entry: 8
       Data: 
---- !u!114 &114924280328992200
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1028709601126426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d4b19f672bb25e489c951d131b6c071, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SpellPoints: []
 --- !u!212 &212148657592753204
 SpriteRenderer:
   m_ObjectHideFlags: 1
