@@ -5,6 +5,15 @@ using UnityEngine;
 
 namespace Controllers
 {
+    [Serializable]
+    public enum PlayerTypes
+    {
+        Birdie = 1,
+        Paladin = 2,
+        Ghost = 3,
+        Otherthing = 4
+    }
+        
     public class PlayerController : MonoBehaviour
     {
         // ReSharper disable once InconsistentNaming
@@ -15,6 +24,7 @@ namespace Controllers
         public float MaxSpeed = 7;
         public Rigidbody2D Rb2D;
         public event Action<string, bool> PlayerToggledReady;
+        public PlayerTypes PlayerType;
 
         private Vector2 _targetVelocity;
         private Vector2 _groundNormal;
@@ -203,6 +213,18 @@ namespace Controllers
                 }
                 spell.SpellCollected(PlayerID, spell.SpellType);
             }
+        }
+
+        public Sprite GetPlayerSpriteByType()
+        {
+            Sprite sprite; 
+            if(!GameController.Instance.playerPics.TryGetValue(PlayerType, out sprite))
+            {
+                Debug.LogError("Player sprite not found.");
+                return null;
+            }
+
+            return sprite;
         }
     }
 }

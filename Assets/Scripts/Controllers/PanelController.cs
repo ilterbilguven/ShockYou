@@ -10,7 +10,8 @@ public enum PanelName
 {
     MainMenuPanel = 1,
     SelectLevelPanel = 2,
-    LevelLobbyPanel = 3
+    LevelLobbyPanel = 3,
+    VictoryPanel = 4
 }
 
 public class PanelController : SerializedMonoBehaviour {

@@ -13,6 +13,9 @@ namespace Controllers
 
         public Action LevelStarted;
 
+        [SerializeField]
+        public Dictionary<PlayerTypes, Sprite> playerPics = new Dictionary<PlayerTypes, Sprite>();
+
         void Awake()
         {
             if (_instance != null && _instance != this)
