@@ -152,17 +152,17 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114465832139625392, guid: cdcb1e2097bbf1a459551a8d697101a8,
-        type: 2}
-      propertyPath: PanelController
-      value: 
-      objectReference: {fileID: 173327995}
     - target: {fileID: 114573424801250904, guid: cdcb1e2097bbf1a459551a8d697101a8,
         type: 2}
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 114573424801250904, guid: cdcb1e2097bbf1a459551a8d697101a8,
         type: 2}
+    - target: {fileID: 114465832139625392, guid: cdcb1e2097bbf1a459551a8d697101a8,
+        type: 2}
+      propertyPath: PanelController
+      value: 
+      objectReference: {fileID: 173327995}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cdcb1e2097bbf1a459551a8d697101a8, type: 2}
   m_IsPrefabParent: 0
@@ -521,15 +521,12 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 224083770074862518, guid: c5d2fd11836f7c447a9ea71f83b6be27,
+    - target: {fileID: 114685648363882118, guid: c5d2fd11836f7c447a9ea71f83b6be27,
         type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1289652877914310, guid: c5d2fd11836f7c447a9ea71f83b6be27, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 114685648363882118, guid: c5d2fd11836f7c447a9ea71f83b6be27,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c5d2fd11836f7c447a9ea71f83b6be27, type: 2}
   m_IsPrefabParent: 0
@@ -640,15 +637,6 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1688256209474722, guid: d386b6b85d0b4fb4bbf48eb1669d5617, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114346064685816502, guid: d386b6b85d0b4fb4bbf48eb1669d5617,
-        type: 2}
-      propertyPath: serializationData.SerializedFormat
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114346064685816502, guid: d386b6b85d0b4fb4bbf48eb1669d5617,
         type: 2}
