@@ -182,5 +182,20 @@ namespace Controllers
             yield return new WaitForSecondsRealtime(ChargeRate);
             StartCoroutine(Charge());
         }
+
+        private void OnTriggerEnter2D(Collider2D obj)
+        {
+            if (obj.CompareTag("SpellItem"))
+            {
+                SpellItem spell = obj.gameObject.GetComponent<SpellItem>();
+
+                if(spell == null)
+                {
+                    Debug.LogError("SpellItem component is null");
+                    return;
+                }
+                GameController.Instance.SpellController.SpellCollected(PlayerID, spell.SpellType);
+            }
+        }
     }
 }

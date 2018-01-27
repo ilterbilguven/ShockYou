@@ -52,4 +52,10 @@ public class SpellController : SerializedMonoBehaviour
             Instantiate(spawningspell, spellSpawnPos.transform.localPosition, Quaternion.identity);
         }
     }
+
+    public void SpellCollected(string playerID, SpellType spellType)
+    {
+        Debug.Log("Player ID:" + playerID);
+        Debug.Log("Spell Type:" + spellType);
+    }
 }
