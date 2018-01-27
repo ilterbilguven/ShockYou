@@ -25,6 +25,8 @@ namespace Controllers
         public Rigidbody2D Rb2D;
         public event Action<string, bool> PlayerToggledReady;
         public PlayerTypes PlayerType;
+        [HideInInspector]
+        public ushort Score = 0;
 
         private Vector2 _targetVelocity;
         private Vector2 _groundNormal;

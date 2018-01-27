@@ -12,6 +12,7 @@ public class LevelLobbyPanel : PanelBase
     public Image BackgroundImage;
     public Text CountdownText;
     public int Countdown;
+    public static int PlayerCount;
     [SerializeField]
     public List<ReadyAreaItem> PlayerReadySubPanels;
 
@@ -19,6 +20,8 @@ public class LevelLobbyPanel : PanelBase
 
     void OnEnable()
     {
+        PlayerCount = 0;
+
         for (int i = 0; i < GameController.Instance.Players.Count; i++)
         {
             GameController.Instance.Players[i].GetComponent<PlayerController>().PlayerToggledReady += MarkdownPlayerReady;
@@ -46,7 +49,7 @@ public class LevelLobbyPanel : PanelBase
         BackgroundImage.sprite = levelSprite;
         GameController.Instance.PanelController.OpenPanel(PanelName.LevelLobbyPanel);
 
-        StartCoroutine(StartCountdown());
+        StartCoroutine(StartCountdown(Countdown));
     }
 
     private void MarkdownPlayerReady(string id, bool ready)
@@ -65,23 +68,31 @@ public class LevelLobbyPanel : PanelBase
         }
         PlayerReadySubPanels[Int32.Parse(id)].PanelImage.color = color;
         PlayerReadySubPanels[Int32.Parse(id)].IsReady = ready;
+        PlayerCount = ready ? PlayerCount + 1 : PlayerCount - 1;
     }
 
-    IEnumerator StartCountdown()
+    IEnumerator StartCountdown(int countdown)
     {
-        int countdown = Countdown;
-        while (countdown > 0)
-        {
-            CountdownText.text = countdown + "";
-            yield return new WaitForSeconds(1f);
-            countdown--;
-            //Play audio
+        int localCountdown = countdown;
 
-            if (PlayerReadySubPanels[0].IsReady && PlayerReadySubPanels[1].IsReady && PlayerReadySubPanels[2].IsReady &&
-                PlayerReadySubPanels[3].IsReady)
-                break;
+        Debug.Log(countdown + ", " + PlayerCount);
+
+        yield return new WaitUntil(() => PlayerCount > 1);
+
+        while (localCountdown > 0)
+        {
+            yield return new WaitForSeconds(1f);
+            CountdownText.text = localCountdown-- + "";
+
+            if (PlayerCount < 2)
+            {
+                CountdownText.text = "";
+                localCountdown = countdown;
+                yield return new WaitUntil(() => PlayerCount > 1);
+                Debug.Log("wtf dude y u leavin' da lobby");
+            }
         }
-        //LoadLevel with given type
+
         StartLevel();
     }
 
@@ -96,11 +107,15 @@ public class LevelLobbyPanel : PanelBase
     {
         for (int i = 0; i < 4; i++)
         {
-            GameController.Instance.Players[i].GetComponent<Rigidbody2D>().simulated = true;
-            GameController.Instance.Players[i].transform.localPosition = GameController.Instance.LevelController.SpawnPoints[i].position;
-            Color c = GameController.Instance.Players[i].GetComponent<SpriteRenderer>().color;
-            c.a = 255;
-            GameController.Instance.Players[i].GetComponent<SpriteRenderer>().color = c;
+            if (PlayerReadySubPanels[i].IsReady)
+            {
+                GameController.Instance.Players[i].GetComponent<Rigidbody2D>().simulated = true;
+                GameController.Instance.Players[i].transform.localPosition = GameController.Instance.LevelController.SpawnPoints[i].position;
+                Color c = GameController.Instance.Players[i].GetComponent<SpriteRenderer>().color;
+                c.a = 255;
+                GameController.Instance.Players[i].GetComponent<SpriteRenderer>().color = c;
+                GameController.Instance.Players[i].GetComponent<PlayerController>().Score = 0;
+            }
         }
         //Activate players;
     }
