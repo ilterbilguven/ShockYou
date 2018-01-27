@@ -14,16 +14,19 @@ public class SpellItem : MonoBehaviour {
         PlayWaveAnimation();
     }
 
-    public void OnSpellCollected()
-    {
-        LeanTween.cancel(_waveAnimation.uniqueId);
-    }
-
     private void PlayWaveAnimation()
     {
         _waveAnimation = LeanTween.moveLocalY(this.gameObject, this.transform.localPosition.y + 0.3f, 0.7f)
             .setFrom(this.transform.localPosition.y - 0.3f)
             .setRepeat(-1)
             .setLoopPingPong(-1);
+    }
+
+    public void SpellCollected(string playerID, SpellType spellType)
+    {
+        Debug.Log("Player ID:" + playerID);
+        Debug.Log("Spell Type:" + spellType);
+
+        LeanTween.cancel(_waveAnimation.uniqueId);
     }
 }

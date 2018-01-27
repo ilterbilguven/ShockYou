@@ -14,11 +14,13 @@ namespace Controllers
         public float JumpTakeOffSpeed = 10;
         public float MaxSpeed = 7;
         public Rigidbody2D Rb2D;
+        public event Action<string, bool> PlayerToggledReady;
 
         private Vector2 _targetVelocity;
         private Vector2 _groundNormal;
         private Vector2 _velocity;
         private bool _grounded;
+        private bool _ready;
         private ContactFilter2D _contactFilter;
         private RaycastHit2D[] _hitBuffer = new RaycastHit2D[16];
         private List<RaycastHit2D> _hitBufferList = new List<RaycastHit2D>(16);
@@ -34,6 +36,7 @@ namespace Controllers
             _animator = GetComponent<Animator>();
             Rb2D = GetComponent<Rigidbody2D>();
             Rb2D.freezeRotation = true;
+            _ready = false;
         }
 
         private void OnEnable()
@@ -139,8 +142,12 @@ namespace Controllers
         {
             if (Input.GetButtonDown("Fire" + PlayerID))
             {
-                //Do sth
-                Debug.LogError("Player" + (Int32.Parse(PlayerID) + 1) + " has used FIRE!");
+                _ready = !_ready;
+                if (PlayerToggledReady != null)
+                {
+                    Debug.Log("Ready! " + PlayerID);
+                    PlayerToggledReady.Invoke(PlayerID, _ready);
+                }
             }
         }
 
@@ -201,7 +208,7 @@ namespace Controllers
                     Debug.LogError("SpellItem component is null");
                     return;
                 }
-                GameController.Instance.SpellController.SpellCollected(PlayerID, spell.SpellType);
+                spell.SpellCollected(PlayerID, spell.SpellType);
             }
         }
     }
