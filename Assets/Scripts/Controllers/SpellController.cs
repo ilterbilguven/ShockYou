@@ -19,9 +19,11 @@ public class SpellController : SerializedMonoBehaviour
     [SerializeField]
     public Dictionary<SpellType, SpellItem> AllSpellIcons = new Dictionary<SpellType, SpellItem>();
 
+    [SerializeField]
+    public Dictionary<SpellType, BaseSpell> AllSpells = new Dictionary<SpellType, BaseSpell>();
+
     private LevelController _levelController;
     private List<Transform> _spellSpanPoints;
-    
 
     private void Start()
     {
@@ -53,4 +55,38 @@ public class SpellController : SerializedMonoBehaviour
             Instantiate(spawningspell, spellSpawnPos.transform.localPosition, Quaternion.identity);
         }
     }
+
+    public void AddSpellToPlayer(SpellType spell, PlayerController player)
+    {
+        Debug.Log("Spell" + spell + " has added to player.");
+        BaseSpell spellObject = GetSpellByType(spell);
+        player.PlayerHand.AddSpellToHand(spellObject);
+    }
+
+    public BaseSpell GetSpellByType(SpellType type)
+    {
+        BaseSpell spell;
+        if(!AllSpells.TryGetValue(type, out spell))
+        {
+            Debug.LogError("Couldn't get the spell by type.");
+            return null;
+        }
+
+        return spell;
+    }
+
+
+    #region Spell action functions
+
+    public void StaticSpell(PlayerController sender, PlayerController receiver)
+    {
+        int damageAmount = sender.ChargeAmount;
+        
+        // Player statics other player, collision is made by 
+        Debug.Log(sender.PlayerID + " gave " +  damageAmount + " static damage to " + receiver.PlayerID);
+    }
+    
+    #endregion
+
+
 }

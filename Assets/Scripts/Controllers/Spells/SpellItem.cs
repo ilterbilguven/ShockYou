@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Controllers;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,11 +23,12 @@ public class SpellItem : MonoBehaviour {
             .setLoopPingPong(-1);
     }
 
-    public void SpellCollected(string playerID, SpellType spellType)
+    public void SpellCollected(PlayerController player, SpellType spellType)
     {
-        Debug.Log("Player ID:" + playerID);
-        Debug.Log("Spell Type:" + spellType);
-
+        Debug.Log("Player " + player.PlayerID + " collected spell " + spellType);
+        GameController.Instance.SpellController.AddSpellToPlayer(spellType, player);
+        
         LeanTween.cancel(_waveAnimation.uniqueId);
+        Destroy(this);
     }
 }

@@ -44,6 +44,7 @@ namespace Controllers
         private const float MinMoveDistance = 0.001f;
         private const float ShellRadius = 0.01f;
 
+        public HandController PlayerHand;
         public ushort Health = 0;
         private bool _charge;
         public ushort ChargeAmount = 0;
@@ -51,9 +52,6 @@ namespace Controllers
 
         void Awake()
         {
-            //_spriteRenderer = GetComponent<SpriteRenderer>();
-            //_animator = GetComponent<Animator>();
-            //Rb2D = GetComponent<Rigidbody2D>();
             Rb2D.freezeRotation = true;
             _ready = false;
         }
@@ -84,8 +82,6 @@ namespace Controllers
 
             Movement(move, true);
         }
-
-        
 
         void Movement(Vector2 move, bool yMovement)
         {
@@ -178,13 +174,17 @@ namespace Controllers
             {
                 if (other.transform.childCount > 0)
                 {
-                    var spell = other.transform.GetComponentInChildren<BaseSpell>();
-                    if (spell.Radius <= 0.2f)
-                    {
-                        GetElectrocuted(spell.Charge);
-                        Destroy(spell.gameObject);
-                    }
-                    other.transform.GetComponentInChildren<BaseSpell>().Collider.enabled = true;
+                    // Static hit only.
+                    //var spell = other.gameObject.GetComponent<HandController>().SpellInHand;
+
+                    GameController.Instance.SpellController.StaticSpell(this, other.gameObject.GetComponent<PlayerController>());
+                    //if (spell.Radius <= 0.2f)
+                    //{
+                    //    Debug.Log("ELECTROCUTED!");
+                    //    GetElectrocuted(spell.Charge);
+                    //    Destroy(spell.gameObject);
+                    //}
+                    //other.transform.GetComponentInChildren<BaseSpell>().Collider.enabled = true;
                 }
                 else
                 {
@@ -231,7 +231,7 @@ namespace Controllers
                     Debug.LogError("SpellItem component is null");
                     return;
                 }
-                spell.SpellCollected(PlayerID, spell.SpellType);
+                spell.SpellCollected(this, spell.SpellType);
             }
         }
 

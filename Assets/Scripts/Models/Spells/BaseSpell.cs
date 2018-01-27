@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class BaseSpell : SerializedMonoBehaviour
 {
+    public Sprite SpellSprite;
+
     public float Radius = 0.2f;
     public ushort Charge = 10;
     public float Delay = 0;

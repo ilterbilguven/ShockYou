@@ -32,7 +32,6 @@ public class LevelLobbyPanel : PanelBase
             PlayerReadySubPanels[i].PanelImage.color = NotReadyColor;
             //PlayerReadySubPanels[i].ShowcaseSprite.sprite = GameController.Instance.Players[i].;
         }
-
     }
 
     private void OnDisable()
@@ -114,8 +113,8 @@ public class LevelLobbyPanel : PanelBase
             {
                 GameObject player = GameController.Instance.Players[i];
                 player.GetComponent<Rigidbody2D>().simulated = true;
-                player.GetComponent<PlayerController>().Container.gameObject.SetActive(true);
                 player.transform.localPosition = GameController.Instance.LevelController.SpawnPoints[i].position;
+                player.GetComponent<PlayerController>().Container.gameObject.SetActive(true);
                 player.GetComponent<PlayerController>().Score = 0;
             }
         }
