@@ -133,9 +133,10 @@ namespace Controllers
                 _velocity.y = JumpTakeOffSpeed;
             }
 
+            bool flipSprite = (_spriteRenderer.flipX ? (move.x > 0.01f) : (move.x < 0.01f));
+
             //Below's for sprite and animator controls, no idea what they do.
             /*
-            //bool flipSprite = (_spriteRenderer.flipX ? (move.x > 0.01f) : (move.x < 0.01f));
             //if (flipSprite)
             //{
             //    _spriteRenderer.flipX = !_spriteRenderer.flipX;
@@ -175,7 +176,26 @@ namespace Controllers
             }
             else if (other.collider.CompareTag("Hand"))
             {
-                GetElectrocuted();
+                if (other.transform.childCount > 0)
+                {
+                    var spell = other.transform.GetComponentInChildren<BaseSpell>();
+                    if (spell.Radius <= 0.2f)
+                    {
+                        GetElectrocuted(spell.Charge);
+                        Destroy(spell.gameObject);
+                    }
+                    other.transform.GetComponentInChildren<BaseSpell>().Collider.enabled = true;
+                }
+                else
+                {
+                    GetElectrocuted(other.collider.GetComponentInParent<PlayerController>().ChargeAmount);
+                    ChargeAmount = 0;
+                }
+            }
+            else if (other.collider.CompareTag("Spell"))
+            {
+                GetElectrocuted(other.transform.GetComponentInChildren<BaseSpell>().Charge);
+                Destroy(other.gameObject);
             }
         }
 
@@ -187,9 +207,9 @@ namespace Controllers
             }
         }
 
-        public void GetElectrocuted()
+        public void GetElectrocuted(ushort damage)
         {
-
+            ChargeAmount -= damage;
         }
 
         private IEnumerator Charge()

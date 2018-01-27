@@ -9,6 +9,7 @@ TagManager:
   - Neutral
   - Item
   - SpellItem
+  - Spell
   layers:
   - Default
   - TransparentFX
@@ -45,4 +46,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 3714447531
+    locked: 0
+  - name: Game
+    uniqueID: 210168737
     locked: 0
