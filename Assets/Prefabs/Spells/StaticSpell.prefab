@@ -145,6 +145,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
+  SpellSprite: {fileID: 21300000, guid: b5112405568a4b84fb1ad2279b5f2dbc, type: 3}
   Radius: 0.2
   Charge: 10
   Delay: 0

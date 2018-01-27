@@ -1,0 +1,132 @@
+
+skeleton.png
+size: 2048,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Hand1
+  rotate: false
+  xy: 1660, 349
+  size: 40, 30
+  orig: 40, 30
+  offset: 0, 0
+  index: -1
+Hand2
+  rotate: true
+  xy: 1884, 389
+  size: 30, 40
+  orig: 30, 40
+  offset: 0, 0
+  index: -1
+Head
+  rotate: false
+  xy: 1345, 154
+  size: 114, 134
+  orig: 114, 134
+  offset: 0, 0
+  index: -1
+Head-1
+  rotate: false
+  xy: 1660, 381
+  size: 114, 103
+  orig: 114, 103
+  offset: 0, 0
+  index: -1
+Head-2
+  rotate: false
+  xy: 1345, 290
+  size: 214, 194
+  orig: 214, 194
+  offset: 0, 0
+  index: -1
+Head1
+  rotate: false
+  xy: 1561, 347
+  size: 97, 137
+  orig: 97, 137
+  offset: 0, 0
+  index: -1
+LeftFoot
+  rotate: false
+  xy: 1345, 14
+  size: 40, 26
+  orig: 40, 26
+  offset: 0, 0
+  index: -1
+LeftShoulderpads
+  rotate: false
+  xy: 1461, 89
+  size: 60, 97
+  orig: 60, 97
+  offset: 0, 0
+  index: -1
+Pants
+  rotate: false
+  xy: 1884, 421
+  size: 106, 63
+  orig: 106, 63
+  offset: 0, 0
+  index: -1
+Pants-1
+  rotate: false
+  xy: 1561, 285
+  size: 94, 60
+  orig: 94, 60
+  offset: 0, 0
+  index: -1
+RightFoot
+  rotate: true
+  xy: 1618, 240
+  size: 43, 26
+  orig: 43, 26
+  offset: 0, 0
+  index: -1
+RightShoulderpads
+  rotate: false
+  xy: 1546, 206
+  size: 70, 77
+  orig: 70, 77
+  offset: 0, 0
+  index: -1
+Screen Shot 2018-01-27 at 13.51.27
+  rotate: false
+  xy: 2, 2
+  size: 1341, 482
+  orig: 1341, 482
+  offset: 0, 0
+  index: -1
+Shoulder
+  rotate: true
+  xy: 1461, 33
+  size: 54, 63
+  orig: 54, 63
+  offset: 0, 0
+  index: -1
+Torso
+  rotate: true
+  xy: 1461, 188
+  size: 100, 83
+  orig: 100, 83
+  offset: 0, 0
+  index: -1
+Torso-1
+  rotate: true
+  xy: 1776, 381
+  size: 103, 106
+  orig: 103, 106
+  offset: 0, 0
+  index: -1
+Torso-2
+  rotate: false
+  xy: 1345, 42
+  size: 114, 110
+  orig: 114, 110
+  offset: 0, 0
+  index: -1
+Torso-3
+  rotate: true
+  xy: 1992, 394
+  size: 90, 54
+  orig: 90, 54
+  offset: 0, 0
+  index: -1

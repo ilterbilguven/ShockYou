@@ -10,6 +10,7 @@ TagManager:
   - Item
   - SpellItem
   - Spell
+  - Hand
   layers:
   - Default
   - TransparentFX

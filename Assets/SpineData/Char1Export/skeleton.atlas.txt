@@ -1,0 +1,76 @@
+
+skeleton.png
+size: 2048,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Hand1
+  rotate: false
+  xy: 1569, 454
+  size: 40, 30
+  orig: 40, 30
+  offset: 0, 0
+  index: -1
+Hand2
+  rotate: false
+  xy: 1345, 124
+  size: 30, 40
+  orig: 30, 40
+  offset: 0, 0
+  index: -1
+Head
+  rotate: false
+  xy: 1345, 350
+  size: 114, 134
+  orig: 114, 134
+  offset: 0, 0
+  index: -1
+LeftFoot
+  rotate: true
+  xy: 1540, 379
+  size: 40, 26
+  orig: 40, 26
+  offset: 0, 0
+  index: -1
+LeftShoulderpads
+  rotate: false
+  xy: 1345, 166
+  size: 60, 97
+  orig: 60, 97
+  offset: 0, 0
+  index: -1
+Pants
+  rotate: false
+  xy: 1461, 421
+  size: 106, 63
+  orig: 106, 63
+  offset: 0, 0
+  index: -1
+RightFoot
+  rotate: true
+  xy: 1407, 220
+  size: 43, 26
+  orig: 43, 26
+  offset: 0, 0
+  index: -1
+RightShoulderpads
+  rotate: true
+  xy: 1461, 349
+  size: 70, 77
+  orig: 70, 77
+  offset: 0, 0
+  index: -1
+Screen Shot 2018-01-27 at 13.51.27
+  rotate: false
+  xy: 2, 2
+  size: 1341, 482
+  orig: 1341, 482
+  offset: 0, 0
+  index: -1
+Torso
+  rotate: false
+  xy: 1345, 265
+  size: 100, 83
+  orig: 100, 83
+  offset: 0, 0
+  index: -1
