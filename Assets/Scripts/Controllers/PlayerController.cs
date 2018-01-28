@@ -48,6 +48,8 @@ namespace Controllers
         private const float MinMoveDistance = 0.001f;
         private const float ShellRadius = 0.01f;
 
+        public bool Flip;
+
         public HandController PlayerHand;
         public ushort Health = 0;
         [SerializeField] private bool _charge;
@@ -170,7 +172,11 @@ namespace Controllers
                 Animator.SetBool("Grounded", _grounded);
             }
 
-            Container.localScale = new Vector3(move.x > 0 ? 1 : -1,1,1);
+            if (move.x != 0)
+            {
+                Flip = move.x < Mathf.Epsilon;
+                Container.localScale = new Vector3(Flip ? -1 : 1,1,1);
+            }
 
             _targetVelocity = move * MaxSpeed;
         }
@@ -237,7 +243,7 @@ namespace Controllers
             {
                 if (obj.transform.childCount > 0)
                 {
-                    GameController.Instance.SpellController.StaticSpell(this, obj.gameObject.GetComponent<PlayerController>());
+                    GameController.Instance.SpellController.StaticSpell(this, obj.gameObject.GetComponentInParent<PlayerController>());
                 }
                 else
                 {
@@ -267,6 +273,11 @@ namespace Controllers
         public void SetCurrentState(MovementType type)
         {
             Animator.SetInteger("State", (int)type);
+        }
+
+        public void Knockback(ushort amount)
+        {
+            Rb2D.AddForce(new Vector2(Flip ? amount : -amount,0), ForceMode2D.Impulse);
         }
     }
 }
