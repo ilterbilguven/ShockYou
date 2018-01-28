@@ -7,11 +7,9 @@ using Sirenix.OdinInspector;
 [Serializable]
 public enum SpellType
 {
-    Static = 0,
-    Battery = 1,
-    Taser = 2,
-    Balloon = 3,
-    Random = 42,
+    Random = 0,
+    Taser = 1,
+    Balloon = 2
 }
 
 public class SpellController : SerializedMonoBehaviour

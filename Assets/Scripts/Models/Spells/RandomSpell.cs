@@ -10,7 +10,7 @@ public class RandomSpell : BaseSpell {
     {
         Random rand = new Random();
 
-        int whichspell = rand.Next(1, 3);
+        int whichspell = rand.Next(1, 2);
         SpellType spell = (SpellType) whichspell;
         Debug.Log("Random spell " + spell + " added to " + player.PlayerID);
 
