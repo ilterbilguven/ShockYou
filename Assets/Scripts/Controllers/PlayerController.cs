@@ -192,7 +192,6 @@ namespace Controllers
                     PlayerToggledReady.Invoke(PlayerID, _ready);
                 }
             }
-            
         }
 
         private void OnCollisionEnter2D(Collision2D other)
@@ -267,16 +266,6 @@ namespace Controllers
                 PlayerController receiver = this;
 
                 BaseSpell usedSpell = obj.gameObject.GetComponentInParent<BaseSpell>();
-                if (usedSpell.SpellType == SpellType.Static)
-                {
-                    StaticSpell asd = (StaticSpell)usedSpell;
-                    asd.UseSpell();
-                }
-                //if (usedSpell.SpellType == SpellType.Battery)
-                //{
-                //    BatterySpell asd = (BatterySpell)usedSpell;
-                //    asd.UseSpell();
-                //}
                 if (usedSpell.SpellType == SpellType.Taser)
                 {
                     TaserSpell asd = (TaserSpell)usedSpell;

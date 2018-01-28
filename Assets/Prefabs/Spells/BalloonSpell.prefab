@@ -145,8 +145,8 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  SpellType: 3
-  SpellSprite: {fileID: 21300000, guid: b3b0d09ae69c11a48910964d7e4d6343, type: 3}
+  SpellType: 2
+  SpellSprite: {fileID: 21300000, guid: 72d4a9125537d714e819344db709bf0e, type: 3}
   Radius: 0.2
   Charge: 10
   Delay: 0
@@ -186,7 +186,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b3b0d09ae69c11a48910964d7e4d6343, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 72d4a9125537d714e819344db709bf0e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
