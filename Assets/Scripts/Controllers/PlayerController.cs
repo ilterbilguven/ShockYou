@@ -192,6 +192,15 @@ namespace Controllers
                     PlayerToggledReady.Invoke(PlayerID, _ready);
                 }
             }
+
+            if (Input.GetButtonDown("Fire" + PlayerID))
+            {
+                if(PlayerHand.SpellInHand.SpellType == SpellType.Battery)
+                {
+                    BatterySpell asd = (BatterySpell)PlayerHand.SpellInHand;
+                    asd.UseSpell(this);
+                }
+            }
         }
 
         private void OnCollisionEnter2D(Collision2D other)
@@ -261,13 +270,11 @@ namespace Controllers
                     StaticSpell asd = (StaticSpell)usedSpell;
                     asd.UseSpell();
                 }
-
-                if (usedSpell.SpellType == SpellType.Battery)
-                {
-                    BatterySpell asd = (BatterySpell)usedSpell;
-                    asd.UseSpell();
-                }
-
+                //if (usedSpell.SpellType == SpellType.Battery)
+                //{
+                //    BatterySpell asd = (BatterySpell)usedSpell;
+                //    asd.UseSpell();
+                //}
                 if (usedSpell.SpellType == SpellType.Taser)
                 {
                     TaserSpell asd = (TaserSpell)usedSpell;
