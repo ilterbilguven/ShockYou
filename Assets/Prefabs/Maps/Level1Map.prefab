@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 8195094279760232280}
   - component: {fileID: 3664157346301177280}
   - component: {fileID: 2113883505912484632}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Neutral
   m_TagString: Neutral
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4711085896673796}
   - component: {fileID: 2569400265301880544}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Level1Map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 8195094281752248488}
   - component: {fileID: 3664157345069010636}
   - component: {fileID: 2113883507120876312}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Border
   m_TagString: Border
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 8195094280562271954}
   - component: {fileID: 3664157344401102722}
   - component: {fileID: 2113883506911129118}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Charging
   m_TagString: Charging
   m_Icon: {fileID: 0}

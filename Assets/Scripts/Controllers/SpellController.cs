@@ -100,11 +100,16 @@ public class SpellController : SerializedMonoBehaviour
         Debug.Log(sender.PlayerID + " gave " + damageAmount + " static damage to " + receiver.PlayerID);
 
         ushort divider = 1;
-        ushort knockbackForce = (ushort) (sender.ChargeAmount / divider);
-        receiver.Knockback(knockbackForce);
+        ushort receiverKnockbackForce = (ushort) (sender.ChargeAmount / divider);
+        receiver.Knockback(receiverKnockbackForce);
         receiver.SetCurrentState(MovementType.Shock);
 
+        ushort senderKnockbackForce = (ushort) (receiver.ChargeAmount / divider);
+        sender.Knockback(senderKnockbackForce);
+        sender.SetCurrentState(MovementType.Shock);
+
         sender.ChargeAmount = 0;
+        receiver.ChargeAmount = 0;
     }
     #endregion
 

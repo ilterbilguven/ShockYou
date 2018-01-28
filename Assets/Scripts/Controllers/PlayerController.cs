@@ -196,7 +196,17 @@ namespace Controllers
 
         private void OnCollisionEnter2D(Collision2D other)
         {
-            
+            if (other.collider.CompareTag("Hand"))
+            {
+                if (other.transform.childCount > 0)
+                {
+                    GameController.Instance.SpellController.StaticSpell(this, other.collider.gameObject.GetComponentInParent<PlayerController>());
+                }
+                else
+                {
+                    Debug.LogError("It shouldnt enter here");
+                }
+            }
 
         }
 
