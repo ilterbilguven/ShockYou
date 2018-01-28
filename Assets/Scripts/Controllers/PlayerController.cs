@@ -31,6 +31,7 @@ namespace Controllers
         [HideInInspector]
         public ushort Score = 0;
         public Animator Animator;
+        public Image Fillbar;
         public SpriteRenderer _spriteRenderer;
 
         [SerializeField] private Vector2 _targetVelocity;
@@ -42,8 +43,6 @@ namespace Controllers
         private ContactFilter2D _contactFilter;
         private RaycastHit2D[] _hitBuffer = new RaycastHit2D[16];
         private List<RaycastHit2D> _hitBufferList = new List<RaycastHit2D>(16);
-
-        public Text ChargeText;
 
         private const float MinMoveDistance = 0.001f;
         private const float ShellRadius = 0.01f;
@@ -84,7 +83,8 @@ namespace Controllers
             _targetVelocity = Vector2.zero;
             ComputeVelocity();
 
-            ChargeText.text = ChargeAmount.ToString();
+            float barFill = ChargeAmount / 100f;
+            Fillbar.fillAmount = barFill;
         }
 
         private void OnEnable()
