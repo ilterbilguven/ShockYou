@@ -99,9 +99,10 @@ public class SpellController : SerializedMonoBehaviour
         // Player statics other player, collision is made by 
         Debug.Log(sender.PlayerID + " gave " + damageAmount + " static damage to " + receiver.PlayerID);
 
-        ushort divider = 10;
+        ushort divider = 1;
         ushort knockbackForce = (ushort) (sender.ChargeAmount / divider);
         receiver.Knockback(knockbackForce);
+        receiver.SetCurrentState(MovementType.Shock);
 
         sender.ChargeAmount = 0;
     }
