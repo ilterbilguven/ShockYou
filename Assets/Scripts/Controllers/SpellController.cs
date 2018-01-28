@@ -98,6 +98,9 @@ public class SpellController : SerializedMonoBehaviour
 
         // Player statics other player, collision is made by 
         Debug.Log(sender.PlayerID + " gave " + damageAmount + " static damage to " + receiver.PlayerID);
+
+        receiver.Knockback(sender.ChargeAmount);
+
     }
 
     //public void BatterySpell(PlayerController sender, PlayerController receiver)
