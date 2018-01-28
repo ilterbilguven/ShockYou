@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class BaseSpell : SerializedMonoBehaviour
 {
+    public SpellType SpellType;
     public Sprite SpellSprite;
 
     public float Radius = 0.2f;
@@ -12,9 +13,5 @@ public class BaseSpell : SerializedMonoBehaviour
     public float Delay = 0;
 
     public Collider2D Collider;
-
-    public virtual void UseSpell()
-    {
-
-    }
+       
 }

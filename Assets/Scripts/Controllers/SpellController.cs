@@ -22,6 +22,9 @@ public class SpellController : SerializedMonoBehaviour
     [SerializeField]
     public Dictionary<SpellType, BaseSpell> AllSpells = new Dictionary<SpellType, BaseSpell>();
 
+    [SerializeField]
+    public Dictionary<SpellType, GameObject> AllSpellPrefabs = new Dictionary<SpellType, GameObject>();
+
     private LevelController _levelController;
     private List<Transform> _spellSpanPoints;
 
@@ -34,7 +37,7 @@ public class SpellController : SerializedMonoBehaviour
     {
         _levelController = GameController.Instance.LevelController;
         _spellSpanPoints = _levelController.SpellPoints;
-        //SpawnSpells(5);
+        SpawnSpells(5);
     }
 
     private void SpawnSpells(int howManySpellToSpawn)
@@ -69,6 +72,18 @@ public class SpellController : SerializedMonoBehaviour
         if(!AllSpells.TryGetValue(type, out spell))
         {
             Debug.LogError("Couldn't get the spell by type.");
+            return null;
+        }
+
+        return spell;
+    }
+
+    public GameObject GetSpellPrefabByType(SpellType type)
+    {
+        GameObject spell;
+        if (!AllSpellPrefabs.TryGetValue(type, out spell))
+        {
+            Debug.LogError("Couldn't get the spellprefab by type.");
             return null;
         }
 

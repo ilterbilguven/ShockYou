@@ -215,7 +215,7 @@ namespace Controllers
         private IEnumerator Charge()
         {
             yield return new WaitUntil(() => _charge);
-            if (ChargeAmount <= ChargeLimit) ChargeAmount++;
+            AddCharge(1);
             yield return new WaitForSecondsRealtime(ChargeRate);
             StartCoroutine(Charge());
         }
@@ -237,7 +237,7 @@ namespace Controllers
             {
                 if (obj.transform.childCount > 0)
                 {
-                    GameController.Instance.SpellController.StaticSpell(this, obj.gameObject.GetComponent<PlayerController>());
+                    GameController.Instance.SpellController.StaticSpell(this, obj.gameObject.GetComponentInParent<PlayerController>());
                 }
                 else
                 {
@@ -246,8 +246,34 @@ namespace Controllers
             }
             else if (obj.CompareTag("Spell"))
             {
-                BaseSpell usedSpell = obj.gameObject.GetComponent<BaseSpell>();
-                usedSpell.UseSpell();
+                PlayerController sender = obj.gameObject.GetComponentInParent<PlayerController>();
+                PlayerController receiver = this;
+
+                BaseSpell usedSpell = obj.gameObject.GetComponentInParent<BaseSpell>();
+                if (usedSpell.SpellType == SpellType.Static)
+                {
+                    StaticSpell asd = (StaticSpell)usedSpell;
+                    asd.UseSpell();
+                }
+
+                if (usedSpell.SpellType == SpellType.Battery)
+                {
+                    BatterySpell asd = (BatterySpell)usedSpell;
+                    asd.UseSpell();
+                }
+
+                if (usedSpell.SpellType == SpellType.Taser)
+                {
+                    TaserSpell asd = (TaserSpell)usedSpell;
+                    asd.UseSpell(sender, receiver);
+                }
+
+                if (usedSpell.SpellType == SpellType.Random)
+                {
+                    RandomSpell asd = (RandomSpell)usedSpell;
+                    asd.UseSpell();
+                }
+
                 //Destroy(other.gameObject);
             }
         }
@@ -267,6 +293,17 @@ namespace Controllers
         public void SetCurrentState(MovementType type)
         {
             Animator.SetInteger("State", (int)type);
+        }
+
+        public void AddCharge(ushort amount)
+        {
+            ChargeAmount += amount;
+            ChargeAmount = (ushort)Mathf.Clamp(ChargeAmount, 0, ChargeLimit);
+        }
+
+        public void RemoveSpell()
+        {
+            PlayerHand.RemoveSpell();
         }
     }
 }

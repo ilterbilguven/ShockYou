@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BatterySpell : BaseSpell
 {
-    public override void UseSpell()
+    public void UseSpell()
     {
         Debug.Log("BatterySpell");
 

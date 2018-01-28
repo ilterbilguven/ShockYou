@@ -3,7 +3,8 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SpellItem : MonoBehaviour {
+public class SpellItem : MonoBehaviour
+{
 
     public SpellType SpellType;
     public SpriteRenderer SpellImage;
@@ -26,8 +27,17 @@ public class SpellItem : MonoBehaviour {
     public void SpellCollected(PlayerController player, SpellType spellType)
     {
         Debug.Log("Player " + player.PlayerID + " collected spell " + spellType);
-        GameController.Instance.SpellController.AddSpellToPlayer(spellType, player);
-        
+
+
+        if (spellType == SpellType.Balloon)
+        {
+            BalloonSpell.UseSpell(player);
+        }
+        else
+        {
+            GameController.Instance.SpellController.AddSpellToPlayer(spellType, player);
+        }
+
         LeanTween.cancel(_waveAnimation.uniqueId);
         Destroy(gameObject);
     }

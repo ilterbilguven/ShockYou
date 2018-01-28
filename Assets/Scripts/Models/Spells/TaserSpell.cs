@@ -1,11 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Controllers;
 using UnityEngine;
 
 public class TaserSpell : BaseSpell {
 
-    public override void UseSpell()
+    public int TaserDamage = 30;
+
+    public void UseSpell(PlayerController sender, PlayerController receiver)
     {
-        Debug.Log("TaserSpell");
+        Debug.Log(sender.PlayerID + " TASED " + receiver.PlayerID + " for " + sender.ChargeAmount + " static damage plus " + TaserDamage + " taser damage.");
+        sender.RemoveSpell();
     }
 }
