@@ -197,7 +197,7 @@ GameObject:
   - component: {fileID: 4240195923984406}
   - component: {fileID: 61027754554592840}
   - component: {fileID: 114225361608512454}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RightHand
   m_TagString: Hand
   m_Icon: {fileID: 0}
@@ -614,7 +614,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1821059541483006
 GameObject:
   m_ObjectHideFlags: 1
@@ -1695,7 +1695,7 @@ MonoBehaviour:
   _charge: 0
   ChargeAmount: 0
   ChargeLimit: 100
-  ChargeRate: 0.5
+  ChargeRate: 0.25
 --- !u!114 &114219981786278058
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1797,7 +1797,7 @@ MonoBehaviour:
   _charge: 0
   ChargeAmount: 0
   ChargeLimit: 100
-  ChargeRate: 0.5
+  ChargeRate: 0.25
 --- !u!114 &114301338367765228
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1830,7 +1830,7 @@ MonoBehaviour:
   _charge: 0
   ChargeAmount: 0
   ChargeLimit: 100
-  ChargeRate: 0.5
+  ChargeRate: 0.25
 --- !u!114 &114317870303160878
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1863,7 +1863,7 @@ MonoBehaviour:
   _charge: 0
   ChargeAmount: 0
   ChargeLimit: 100
-  ChargeRate: 0.5
+  ChargeRate: 0.25
 --- !u!114 &114394867064421740
 MonoBehaviour:
   m_ObjectHideFlags: 1
