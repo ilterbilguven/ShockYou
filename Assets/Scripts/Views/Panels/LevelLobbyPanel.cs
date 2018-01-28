@@ -8,7 +8,6 @@ using UnityEngine.UI;
 
 public class LevelLobbyPanel : PanelBase
 {
-    public Color ReadyColor, NotReadyColor;
     public Image BackgroundImage;
     public Text CountdownText;
     public int Countdown;
@@ -24,14 +23,16 @@ public class LevelLobbyPanel : PanelBase
 
         for (int i = 0; i < GameController.Instance.Players.Count; i++)
         {
-            GameController.Instance.Players[i].GetComponent<PlayerController>().PlayerToggledReady += MarkdownPlayerReady;
+            GameController.Instance.Players[i].SetActive(true);
         }
 
-        for (int i = 0; i < PlayerReadySubPanels.Count; i++)
-        {
-            PlayerReadySubPanels[i].PanelImage.color = NotReadyColor;
-            //PlayerReadySubPanels[i].ShowcaseSprite.sprite = GameController.Instance.Players[i].;
-        }
+        StartCoroutine(RegisterLobbyEvent());
+    }
+
+    private IEnumerator RegisterLobbyEvent()
+    {
+        yield return new WaitForSecondsRealtime(1f);
+        GameController.Instance.Players.ForEach(o => o.GetComponent<PlayerController>().PlayerToggledReady += MarkdownPlayerReady);
     }
 
     private void OnDisable()
@@ -45,7 +46,6 @@ public class LevelLobbyPanel : PanelBase
     public void StartLevel(LevelTypes levelType, Sprite levelSprite)
     {
         _lvltype = levelType;
-        BackgroundImage.sprite = levelSprite;
         GameController.Instance.PanelController.OpenPanel(PanelName.LevelLobbyPanel);
 
         StartCoroutine(StartCountdown(Countdown));
@@ -53,20 +53,9 @@ public class LevelLobbyPanel : PanelBase
 
     private void MarkdownPlayerReady(string id, bool ready)
     {
-        Color color = PlayerReadySubPanels[Int32.Parse(id)].transform.GetChild(1).GetComponent<Image>().color;
-        if (isActiveAndEnabled)
-        {
-            if (color == ReadyColor)
-            {
-                color = NotReadyColor;
-            }
-            else if (color == NotReadyColor)
-            {
-                color = ReadyColor;
-            }
-        }
-        PlayerReadySubPanels[Int32.Parse(id)].PanelImage.color = color;
+        Debug.Log("T1");
         PlayerReadySubPanels[Int32.Parse(id)].IsReady = ready;
+        PlayerReadySubPanels[Int32.Parse(id)].Skeleton.enabled = PlayerReadySubPanels[Int32.Parse(id)].IsReady;
         PlayerCount = ready ? PlayerCount + 1 : PlayerCount - 1;
     }
 
@@ -88,7 +77,6 @@ public class LevelLobbyPanel : PanelBase
                 CountdownText.text = "";
                 localCountdown = countdown;
                 yield return new WaitUntil(() => PlayerCount > 1);
-                Debug.Log("wtf dude y u leavin' da lobby");
             }
         }
 
