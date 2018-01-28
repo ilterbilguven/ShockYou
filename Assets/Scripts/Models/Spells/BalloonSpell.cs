@@ -11,5 +11,6 @@ public class BalloonSpell : BaseSpell
     {
         player.AddCharge(20);
         Debug.Log("BaloonSpell");
+        player.RemoveSpell();
     }
 }

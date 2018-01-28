@@ -33,6 +33,12 @@ public class SpellItem : MonoBehaviour
         {
             BalloonSpell.UseSpell(player);
         }
+        else if (spellType == SpellType.Random)
+        {
+            SpellType randomSpell = RandomSpell.UseSpell(player);
+            SpellCollected(player, randomSpell);
+            return;
+        }
         else
         {
             GameController.Instance.SpellController.AddSpellToPlayer(spellType, player);

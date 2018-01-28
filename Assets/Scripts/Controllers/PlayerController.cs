@@ -273,14 +273,6 @@ namespace Controllers
                     TaserSpell asd = (TaserSpell)usedSpell;
                     asd.UseSpell(sender, receiver);
                 }
-
-                if (usedSpell.SpellType == SpellType.Random)
-                {
-                    RandomSpell asd = (RandomSpell)usedSpell;
-                    asd.UseSpell();
-                }
-
-                //Destroy(other.gameObject);
             }
         }
 
