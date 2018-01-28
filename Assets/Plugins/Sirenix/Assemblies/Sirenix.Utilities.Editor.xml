@@ -6129,7 +6129,7 @@
             Centered bold label style.
             </summary>
         </member>
-        <member name="P:Sirenix.Utilities.Editor.SirenixGUIStyles.BoxContainer">
+        <member name="P:Sirenix.Utilities.Editor.SirenixGUIStyles.BoxCanvasContainer">
             <summary>
             Box container style.
             </summary>

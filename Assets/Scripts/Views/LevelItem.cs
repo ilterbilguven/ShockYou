@@ -26,7 +26,7 @@ public class LevelItem : MonoBehaviour {
         {
             GameObject player = GameController.Instance.Players[i];
 
-            player.GetComponent<PlayerController>().Container.gameObject.SetActive(false);
+            player.GetComponent<PlayerController>().CanvasContainer.gameObject.SetActive(false);
             player.SetActive(true);
             player.GetComponent<Rigidbody2D>().simulated = false;
         }

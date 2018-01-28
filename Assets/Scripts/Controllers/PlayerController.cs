@@ -16,8 +16,8 @@ namespace Controllers
         
     public class PlayerController : MonoBehaviour
     {
+        public Transform CanvasContainer;
         public Transform Container;
-
         // ReSharper disable once InconsistentNaming
         public string PlayerID;
         public float MinGroundNormalY = .65f;
@@ -54,7 +54,7 @@ namespace Controllers
 
         void Awake()
         {
-            //Animator = Container.GetComponent<Animator>();
+            //Animator = CanvasContainer.GetComponent<Animator>();
             Rb2D.constraints = RigidbodyConstraints2D.FreezeAll;
             _ready = false;
             //Animator.Play("Idle");
@@ -165,23 +165,11 @@ namespace Controllers
                 Animator.SetBool("Grounded", _grounded);
             }
 
-
-            bool flipSprite = (_spriteRenderer.flipX ? (move.x > 0.01f) : (move.x < 0.01f));
-
-            //_animator.SetFloat("velocityX", Mathf.Abs(_velocity.x) / MaxSpeed);
-
-            //Below's for sprite and animator controls, no idea what they do.
-            /*
-            //if (flipSprite)
-            //{
-            //    _spriteRenderer.flipX = !_spriteRenderer.flipX;
-            //}
-
-            */
+            Container.localScale = new Vector3(move.x > 0 ? 1 : -1,1,1);
 
             _targetVelocity = move * MaxSpeed;
         }
-
+        
         private void Fire()
         {
             if (Input.GetButtonDown("Fire" + PlayerID))

@@ -114,7 +114,7 @@ public class LevelLobbyPanel : PanelBase
                 GameObject player = GameController.Instance.Players[i];
                 player.GetComponent<Rigidbody2D>().simulated = true;
                 player.transform.localPosition = GameController.Instance.LevelController.SpawnPoints[i].position;
-                player.GetComponent<PlayerController>().Container.gameObject.SetActive(true);
+                player.GetComponent<PlayerController>().CanvasContainer.gameObject.SetActive(true);
                 player.GetComponent<PlayerController>().Score = 0;
             }
         }

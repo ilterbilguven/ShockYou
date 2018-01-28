@@ -7612,7 +7612,7 @@
         </member>
         <member name="T:Sirenix.OdinInspector.Editor.PropertyContext`1">
             <summary>
-            <para>A contextual value attached to an <see cref="T:Sirenix.OdinInspector.Editor.InspectorProperty"/>, mapped to a key, contained in a <see cref="T:Sirenix.OdinInspector.Editor.PropertyContextContainer"/>.</para>
+            <para>A contextual value attached to an <see cref="T:Sirenix.OdinInspector.Editor.InspectorProperty"/>, mapped to a key, contained in a <see cref="T:Sirenix.OdinInspector.Editor.PropertyContextCanvasContainer"/>.</para>
             </summary>
         </member>
         <member name="F:Sirenix.OdinInspector.Editor.PropertyContext`1.Value">
@@ -7642,20 +7642,20 @@
             A <see cref="T:System.String" /> that represents this instance.
             </returns>
         </member>
-        <member name="T:Sirenix.OdinInspector.Editor.PropertyContextContainer">
+        <member name="T:Sirenix.OdinInspector.Editor.PropertyContextCanvasContainer">
             <summary>
             <para>Contains a context for an <see cref="T:Sirenix.OdinInspector.Editor.InspectorProperty"/>, which offers the ability to address persistent values by key across several editor GUI frames.</para>
             <para>Use this in drawers to store contextual editor-only values such as the state of a foldout.</para>
             </summary>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextContainer.#ctor(Sirenix.OdinInspector.Editor.InspectorProperty)">
+        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextCanvasContainer.#ctor(Sirenix.OdinInspector.Editor.InspectorProperty)">
             <summary>
-            Initializes a new instance of the <see cref="T:Sirenix.OdinInspector.Editor.PropertyContextContainer"/> class.
+            Initializes a new instance of the <see cref="T:Sirenix.OdinInspector.Editor.PropertyContextCanvasContainer"/> class.
             </summary>
             <param name="property">The property.</param>
             <exception cref="T:System.ArgumentNullException">property</exception>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextContainer.GetGlobalTemporary``1(System.String,System.Func{``0})">
+        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextCanvasContainer.GetGlobalTemporary``1(System.String,System.Func{``0})">
             <summary>
             <para>Gets a global temporary context value for a given key, using a given delegate to generate a default value if the context doesn't already exist.</para>
             <para>Global contexts are not associated with any one specific drawer, and so are shared across all drawers for this property.</para>
@@ -7665,7 +7665,7 @@
             <param name="getDefaultValue">A delegate for generating a default value.</param>
             <returns>The found context.</returns>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextContainer.GetGlobalTemporary``1(System.String,``0)">
+        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextCanvasContainer.GetGlobalTemporary``1(System.String,``0)">
             <summary>
             <para>Gets a global temporary context value for a given key, using a given default value if the context doesn't already exist.</para>
             <para>Global contexts are not associated with any one specific drawer, and so are shared across all drawers for this property.</para>
@@ -7675,7 +7675,7 @@
             <param name="defaultValue">The default value to set if the context value doesn't exist yet.</param>
             <returns>The found context.</returns>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextContainer.GetGlobalTemporary``1(System.String)">
+        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextCanvasContainer.GetGlobalTemporary``1(System.String)">
             <summary>
             <para>Gets a global temporary context value for a given key, and creates a new instance of <see cref="!:T"/> as a default value if the context doesn't already exist.</para>
             <para>Global contexts are not associated with any one specific drawer, and so are shared across all drawers for this property.</para>
@@ -7684,7 +7684,7 @@
             <param name="key">The key of the context value to get.</param>
             <returns>The found context.</returns>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextContainer.GetGlobal``1(System.String,System.Func{``0})">
+        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextCanvasContainer.GetGlobal``1(System.String,System.Func{``0})">
             <summary>
             <para>Gets a global context value for a given key, using a given delegate to generate a default value if the context doesn't already exist.</para>
             <para>Global contexts are not associated with any one specific drawer, and so are shared across all drawers for this property.</para>
@@ -7694,7 +7694,7 @@
             <param name="getDefaultValue">A delegate for generating a default value.</param>
             <returns>The found context.</returns>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextContainer.GetGlobal``1(System.String,``0)">
+        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextCanvasContainer.GetGlobal``1(System.String,``0)">
             <summary>
             <para>Gets a global context value for a given key, using a given default value if the context doesn't already exist.</para>
             <para>Global contexts are not associated with any one specific drawer, and so are shared across all drawers for this property.</para>
@@ -7704,7 +7704,7 @@
             <param name="defaultValue">The default value to set if the context value doesn't exist yet.</param>
             <returns>The found context.</returns>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextContainer.GetGlobal``1(System.String)">
+        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextCanvasContainer.GetGlobal``1(System.String)">
             <summary>
             <para>Gets a global context value for a given key, and creates a new instance of <see cref="!:T"/> as a default value if the context doesn't already exist.</para>
             <para>Global contexts are not associated with any one specific drawer, and so are shared across all drawers for this property.</para>
@@ -7713,7 +7713,7 @@
             <param name="key">The key of the context value to get.</param>
             <returns>The found context.</returns>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextContainer.Get``1(Sirenix.OdinInspector.Editor.OdinDrawer,System.String,System.Func{``0})">
+        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextCanvasContainer.Get``1(Sirenix.OdinInspector.Editor.OdinDrawer,System.String,System.Func{``0})">
             <summary>
             <para>Gets a context value local to a drawer type for a given key, using a given delegate to generate a default value if the context doesn't already exist.</para>
             </summary>
@@ -7726,7 +7726,7 @@
             </returns>
             <exception cref="T:System.ArgumentNullException">drawerInstance is null</exception>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextContainer.Get``2(System.String,System.Func{``0})">
+        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextCanvasContainer.Get``2(System.String,System.Func{``0})">
             <summary>
             <para>Gets a context value local to a drawer type for a given key, using a given delegate to generate a default value if the context doesn't already exist.</para>
             </summary>
@@ -7739,7 +7739,7 @@
             </returns>
             <exception cref="T:System.ArgumentNullException">drawerInstance is null</exception>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextContainer.Get``1(System.Type,System.String,System.Func{``0})">
+        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextCanvasContainer.Get``1(System.Type,System.String,System.Func{``0})">
             <summary>
             <para>Gets a context value local to a drawer type for a given key, using a given delegate to generate a default value if the context doesn't already exist.</para>
             </summary>
@@ -7752,7 +7752,7 @@
             </returns>
             <exception cref="T:System.ArgumentNullException">drawerInstance is null</exception>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextContainer.Get``1(Sirenix.OdinInspector.Editor.OdinDrawer,System.String,``0)">
+        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextCanvasContainer.Get``1(Sirenix.OdinInspector.Editor.OdinDrawer,System.String,``0)">
             <summary>
             <para>Gets a context value local to a drawer type for a given key, using a given default value if the context doesn't already exist.</para>
             </summary>
@@ -7765,7 +7765,7 @@
             </returns>
             <exception cref="T:System.ArgumentNullException">drawerInstance is null</exception>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextContainer.Get``2(System.String,``0)">
+        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextCanvasContainer.Get``2(System.String,``0)">
             <summary>
             <para>Gets a context value local to a drawer type for a given key, using a given default value if the context doesn't already exist.</para>
             </summary>
@@ -7778,7 +7778,7 @@
             </returns>
             <exception cref="T:System.ArgumentNullException">drawerInstance is null</exception>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextContainer.Get``1(System.Type,System.String,``0)">
+        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextCanvasContainer.Get``1(System.Type,System.String,``0)">
             <summary>
             <para>Gets a context value local to a drawer type for a given key, using a given default value if the context doesn't already exist.</para>
             </summary>
@@ -7791,7 +7791,7 @@
             </returns>
             <exception cref="T:System.ArgumentNullException">drawerInstance is null</exception>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextContainer.Get``1(Sirenix.OdinInspector.Editor.OdinDrawer,System.String)">
+        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextCanvasContainer.Get``1(Sirenix.OdinInspector.Editor.OdinDrawer,System.String)">
             <summary>
             Gets a context value local to a drawer type for a given key, and creates a new instance of <see cref="!:T" /> as a default value if the context doesn't already exist.
             </summary>
@@ -7803,7 +7803,7 @@
             </returns>
             <exception cref="T:System.ArgumentNullException">drawerInstance is null</exception>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextContainer.Get``2(System.String)">
+        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextCanvasContainer.Get``2(System.String)">
             <summary>
             Gets a context value local to a drawer type for a given key, and creates a new instance of <see cref="!:T" /> as a default value if the context doesn't already exist.
             </summary>
@@ -7815,7 +7815,7 @@
             </returns>
             <exception cref="T:System.ArgumentNullException">drawerInstance is null</exception>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextContainer.Get``1(System.Type,System.String)">
+        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextCanvasContainer.Get``1(System.Type,System.String)">
             <summary>
             Gets a context value local to a drawer type for a given key, and creates a new instance of <see cref="!:T" /> as a default value if the context doesn't already exist.
             </summary>
@@ -7827,35 +7827,35 @@
             </returns>
             <exception cref="T:System.ArgumentNullException">drawerInstance is null</exception>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextContainer.Get``1(Sirenix.OdinInspector.Editor.OdinDrawer,System.String,``0@)">
+        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextCanvasContainer.Get``1(Sirenix.OdinInspector.Editor.OdinDrawer,System.String,``0@)">
             <summary>
             Gets a context value local to a drawer type for a given key, and creates a new instance of <see cref="!:T" />
             as a default value if the context doesn't already exist.
             </summary>
             <returns>Returns true if a new context was created.</returns>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextContainer.Get``1(Sirenix.OdinInspector.Editor.OdinDrawer,System.String,Sirenix.OdinInspector.Editor.PropertyContext{``0}@)">
+        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextCanvasContainer.Get``1(Sirenix.OdinInspector.Editor.OdinDrawer,System.String,Sirenix.OdinInspector.Editor.PropertyContext{``0}@)">
             <summary>
             Gets a context value local to a drawer type for a given key, and creates a new instance of <see cref="!:T" />
             as a default value if the context doesn't already exist.
             </summary>
             <returns>Returns true if a new context was created.</returns>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextContainer.Get``1(System.Type,System.String,Sirenix.OdinInspector.Editor.PropertyContext{``0}@)">
+        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextCanvasContainer.Get``1(System.Type,System.String,Sirenix.OdinInspector.Editor.PropertyContext{``0}@)">
             <summary>
             Gets a context value local to a drawer type for a given key, and creates a new instance of <see cref="!:T" />
             as a default value if the context doesn't already exist.
             </summary>
             <returns>Returns true if a new context was created.</returns>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextContainer.Get``2(System.String,Sirenix.OdinInspector.Editor.PropertyContext{``0}@)">
+        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextCanvasContainer.Get``2(System.String,Sirenix.OdinInspector.Editor.PropertyContext{``0}@)">
             <summary>
             Gets a context value local to a drawer type for a given key, and creates a new instance of <see cref="!:T" />
             as a default value if the context doesn't already exist.
             </summary>
             <returns>Returns true if a new context was created.</returns>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextContainer.GetTemporary``1(Sirenix.OdinInspector.Editor.OdinDrawer,System.String,System.Func{``0})">
+        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextCanvasContainer.GetTemporary``1(Sirenix.OdinInspector.Editor.OdinDrawer,System.String,System.Func{``0})">
             <summary>
             <para>Gets a temporary context value local to a drawer type for a given key, using a given delegate to generate a default value if the context doesn't already exist.</para>
             <para>Temporary context values are reset at the start of every GUI frame; arrays are set to default values, collections are cleared, and context types that implement <see cref="T:Sirenix.OdinInspector.Editor.ITemporaryContext"/> have <see cref="M:Sirenix.OdinInspector.Editor.ITemporaryContext.Reset"/> called.</para>
@@ -7869,7 +7869,7 @@
             </returns>
             <exception cref="T:System.ArgumentNullException">drawerInstance is null</exception>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextContainer.GetTemporary``2(System.String,System.Func{``0})">
+        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextCanvasContainer.GetTemporary``2(System.String,System.Func{``0})">
             <summary>
             <para>Gets a temporary context value local to a drawer type for a given key, using a given delegate to generate a default value if the context doesn't already exist.</para>
             <para>Temporary context values are reset at the start of every GUI frame; arrays are set to default values, collections are cleared, and context types that implement <see cref="T:Sirenix.OdinInspector.Editor.ITemporaryContext" /> have <see cref="M:Sirenix.OdinInspector.Editor.ITemporaryContext.Reset" /> called.</para>
@@ -7883,7 +7883,7 @@
             </returns>
             <exception cref="T:System.ArgumentNullException">drawerInstance is null</exception>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextContainer.GetTemporary``1(System.Type,System.String,System.Func{``0})">
+        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextCanvasContainer.GetTemporary``1(System.Type,System.String,System.Func{``0})">
             <summary>
             <para>Gets a temporary context value local to a drawer type for a given key, using a given delegate to generate a default value if the context doesn't already exist.</para>
             <para>Temporary context values are reset at the start of every GUI frame; arrays are set to default values, collections are cleared, and context types that implement <see cref="T:Sirenix.OdinInspector.Editor.ITemporaryContext" /> have <see cref="M:Sirenix.OdinInspector.Editor.ITemporaryContext.Reset" /> called.</para>
@@ -7897,7 +7897,7 @@
             </returns>
             <exception cref="T:System.ArgumentNullException">drawerInstance is null</exception>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextContainer.GetTemporary``1(Sirenix.OdinInspector.Editor.OdinDrawer,System.String,``0)">
+        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextCanvasContainer.GetTemporary``1(Sirenix.OdinInspector.Editor.OdinDrawer,System.String,``0)">
             <summary>
             <para>Gets a temporary context value local to a drawer type for a given key, using a given default value if the context doesn't already exist.</para>
             <para>Temporary context values are reset at the start of every GUI frame; arrays are set to default values, collections are cleared, and context types that implement <see cref="T:Sirenix.OdinInspector.Editor.ITemporaryContext"/> have <see cref="M:Sirenix.OdinInspector.Editor.ITemporaryContext.Reset"/> called.</para>
@@ -7911,7 +7911,7 @@
             </returns>
             <exception cref="T:System.ArgumentNullException">drawerInstance is null</exception>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextContainer.GetTemporary``2(System.String,``0)">
+        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextCanvasContainer.GetTemporary``2(System.String,``0)">
             <summary>
             <para>Gets a temporary context value local to a drawer type for a given key, using a given default value if the context doesn't already exist.</para>
             <para>Temporary context values are reset at the start of every GUI frame; arrays are set to default values, collections are cleared, and context types that implement <see cref="T:Sirenix.OdinInspector.Editor.ITemporaryContext" /> have <see cref="M:Sirenix.OdinInspector.Editor.ITemporaryContext.Reset" /> called.</para>
@@ -7925,7 +7925,7 @@
             </returns>
             <exception cref="T:System.ArgumentNullException">drawerInstance is null</exception>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextContainer.GetTemporary``1(System.Type,System.String,``0)">
+        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextCanvasContainer.GetTemporary``1(System.Type,System.String,``0)">
             <summary>
             <para>Gets a temporary context value local to a drawer type for a given key, using a given default value if the context doesn't already exist.</para>
             <para>Temporary context values are reset at the start of every GUI frame; arrays are set to default values, collections are cleared, and context types that implement <see cref="T:Sirenix.OdinInspector.Editor.ITemporaryContext" /> have <see cref="M:Sirenix.OdinInspector.Editor.ITemporaryContext.Reset" /> called.</para>
@@ -7939,7 +7939,7 @@
             </returns>
             <exception cref="T:System.ArgumentNullException">drawerInstance is null</exception>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextContainer.GetTemporary``1(Sirenix.OdinInspector.Editor.OdinDrawer,System.String)">
+        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextCanvasContainer.GetTemporary``1(Sirenix.OdinInspector.Editor.OdinDrawer,System.String)">
             <summary>
             <para>Gets a temporary context value local to a drawer type for a given key, and creates a new instance of <see cref="!:T" /> as a default value if the context doesn't already exist.</para>
             <para>Temporary context values are reset at the start of every GUI frame; arrays are set to default values, collections are cleared, and context types that implement <see cref="T:Sirenix.OdinInspector.Editor.ITemporaryContext" /> have <see cref="M:Sirenix.OdinInspector.Editor.ITemporaryContext.Reset" /> called.</para>
@@ -7952,7 +7952,7 @@
             </returns>
             <exception cref="T:System.ArgumentNullException">drawerInstance is null</exception>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextContainer.GetTemporary``2(System.String)">
+        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextCanvasContainer.GetTemporary``2(System.String)">
             <summary>
             <para>Gets a temporary context value local to a drawer type for a given key, and creates a new instance of <see cref="!:T" /> as a default value if the context doesn't already exist.</para>
             <para>Temporary context values are reset at the start of every GUI frame; arrays are set to default values, collections are cleared, and context types that implement <see cref="T:Sirenix.OdinInspector.Editor.ITemporaryContext" /> have <see cref="M:Sirenix.OdinInspector.Editor.ITemporaryContext.Reset" /> called.</para>
@@ -7965,7 +7965,7 @@
             </returns>
             <exception cref="T:System.ArgumentNullException">drawerInstance is null</exception>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextContainer.GetTemporary``1(System.Type,System.String)">
+        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextCanvasContainer.GetTemporary``1(System.Type,System.String)">
             <summary>
             <para>Gets a temporary context value local to a drawer type for a given key, and creates a new instance of <see cref="!:T" /> as a default value if the context doesn't already exist.</para>
             <para>Temporary context values are reset at the start of every GUI frame; arrays are set to default values, collections are cleared, and context types that implement <see cref="T:Sirenix.OdinInspector.Editor.ITemporaryContext" /> have <see cref="M:Sirenix.OdinInspector.Editor.ITemporaryContext.Reset" /> called.</para>
@@ -7978,18 +7978,18 @@
             </returns>
             <exception cref="T:System.ArgumentNullException">drawerInstance is null</exception>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextContainer.ResetTemporaryContexts">
+        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextCanvasContainer.ResetTemporaryContexts">
             <summary>
             Resets all temporary contexts for the property.
             </summary>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextContainer.SwapContext(Sirenix.OdinInspector.Editor.PropertyContextContainer)">
+        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextCanvasContainer.SwapContext(Sirenix.OdinInspector.Editor.PropertyContextCanvasContainer)">
             <summary>
-            Swaps context values with a given <see cref="T:Sirenix.OdinInspector.Editor.PropertyContextContainer"/>.
+            Swaps context values with a given <see cref="T:Sirenix.OdinInspector.Editor.PropertyContextCanvasContainer"/>.
             </summary>
             <param name="otherContext">The context to swap with.</param>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextContainer.GetPersistent``1(Sirenix.OdinInspector.Editor.OdinDrawer,System.String,``0)">
+        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextCanvasContainer.GetPersistent``1(Sirenix.OdinInspector.Editor.OdinDrawer,System.String,``0)">
             <summary>
             Gets a <see cref="T:Sirenix.OdinInspector.Editor.GlobalPersistentContext`1"/> object and creates a <see cref="T:Sirenix.OdinInspector.Editor.LocalPersistentContext`1"/> object for it.
             </summary>
@@ -7998,7 +7998,7 @@
             <param name="key">The key for the context.</param>
             <param name="defaultValue">The default value for the context.</param>
         </member>
-        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextContainer.GetPersistent``1(Sirenix.OdinInspector.Editor.OdinDrawer,System.String,Sirenix.OdinInspector.Editor.LocalPersistentContext{``0}@)">
+        <member name="M:Sirenix.OdinInspector.Editor.PropertyContextCanvasContainer.GetPersistent``1(Sirenix.OdinInspector.Editor.OdinDrawer,System.String,Sirenix.OdinInspector.Editor.LocalPersistentContext{``0}@)">
             <summary>
             Gets a <see cref="T:Sirenix.OdinInspector.Editor.GlobalPersistentContext`1"/> object and creates a <see cref="T:Sirenix.OdinInspector.Editor.LocalPersistentContext`1"/> object for it.
             Returns <c>true</c> when the <see cref="T:Sirenix.OdinInspector.Editor.GlobalPersistentContext`1"/> is first created. Otherwise <c>false</c>.
@@ -8011,10 +8011,10 @@
         </member>
         <member name="T:Sirenix.OdinInspector.Editor.TemporaryPropertyContext`1">
             <summary>
-            <para>A temporary contextual value attached to an <see cref="T:Sirenix.OdinInspector.Editor.InspectorProperty"/>, mapped to a key, contained in a <see cref="T:Sirenix.OdinInspector.Editor.PropertyContextContainer"/>.</para>
+            <para>A temporary contextual value attached to an <see cref="T:Sirenix.OdinInspector.Editor.InspectorProperty"/>, mapped to a key, contained in a <see cref="T:Sirenix.OdinInspector.Editor.PropertyContextCanvasContainer"/>.</para>
             <para>The value of a <see cref="T:Sirenix.OdinInspector.Editor.TemporaryPropertyContext`1"/> will be reset at the start of each GUI frame.</para>
             </summary>
-            <seealso cref="T:Sirenix.OdinInspector.Editor.PropertyContextContainer"/>
+            <seealso cref="T:Sirenix.OdinInspector.Editor.PropertyContextCanvasContainer"/>
         </member>
         <member name="F:Sirenix.OdinInspector.Editor.TemporaryPropertyContext`1.Value">
             <summary>
