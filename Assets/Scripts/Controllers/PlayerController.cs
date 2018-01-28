@@ -192,15 +192,7 @@ namespace Controllers
                     PlayerToggledReady.Invoke(PlayerID, _ready);
                 }
             }
-
-            if (Input.GetButtonDown("Fire" + PlayerID))
-            {
-                if(PlayerHand.SpellInHand.SpellType == SpellType.Battery)
-                {
-                    BatterySpell asd = (BatterySpell)PlayerHand.SpellInHand;
-                    asd.UseSpell(this);
-                }
-            }
+            
         }
 
         private void OnCollisionEnter2D(Collision2D other)
