@@ -569,6 +569,21 @@ Prefab:
       propertyPath: PanelController
       value: 
       objectReference: {fileID: 173327995}
+    - target: {fileID: 114230613737202080, guid: cdcb1e2097bbf1a459551a8d697101a8,
+        type: 2}
+      propertyPath: _velocity.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114301338367765228, guid: cdcb1e2097bbf1a459551a8d697101a8,
+        type: 2}
+      propertyPath: _velocity.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114317870303160878, guid: cdcb1e2097bbf1a459551a8d697101a8,
+        type: 2}
+      propertyPath: ChargeAmount
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cdcb1e2097bbf1a459551a8d697101a8, type: 2}
   m_IsPrefabParent: 0

@@ -1182,7 +1182,7 @@ MonoBehaviour:
   - {fileID: 1521367710}
   - {fileID: 604580679}
   LevelTimeText: {fileID: 1412048636}
-  LevelTime: 50
+  LevelTime: 10000
 --- !u!4 &1581748762
 Transform:
   m_ObjectHideFlags: 0

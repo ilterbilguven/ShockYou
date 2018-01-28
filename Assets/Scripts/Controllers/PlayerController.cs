@@ -143,10 +143,16 @@ namespace Controllers
                 _velocity.y = JumpTakeOffSpeed;
             }
 
+            if (Animator != null)
+            {
+                SetCurrentState(Mathf.Abs(_velocity.x) > Mathf.Epsilon ? MovementType.Walking : MovementType.Idle);
+
+                Animator.SetBool("Grounded", _grounded);
+            }
+
+
             bool flipSprite = (_spriteRenderer.flipX ? (move.x > 0.01f) : (move.x < 0.01f));
 
-
-            //_animator.SetBool("grounded", _grounded);
             //_animator.SetFloat("velocityX", Mathf.Abs(_velocity.x) / MaxSpeed);
 
             //Below's for sprite and animator controls, no idea what they do.
@@ -248,6 +254,11 @@ namespace Controllers
             }
 
             return sprite;
+        }
+
+        public void SetCurrentState(MovementType type)
+        {
+            Animator.SetInteger("State", (int)type);
         }
     }
 }
