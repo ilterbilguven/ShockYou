@@ -34,7 +34,7 @@ public class SpellController : SerializedMonoBehaviour
     {
         _levelController = GameController.Instance.LevelController;
         _spellSpanPoints = _levelController.SpellPoints;
-        SpawnSpells(5);
+        //SpawnSpells(5);
     }
 
     private void SpawnSpells(int howManySpellToSpawn)
