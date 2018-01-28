@@ -8,6 +8,7 @@ public class TaserSpell : BaseSpell {
     public void UseSpell(PlayerController sender, PlayerController receiver)
     {
         Debug.Log(sender.PlayerID + " TASED " + receiver.PlayerID + " for " + sender.ChargeAmount + " static damage plus " + TaserDamage + " taser damage.");
+        receiver.ShellShocked();
         sender.RemoveSpell();
     }
 }
