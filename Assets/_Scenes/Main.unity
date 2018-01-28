@@ -514,6 +514,64 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224097248221327540, guid: c5d2fd11836f7c447a9ea71f83b6be27,
     type: 2}
   m_PrefabInternal: {fileID: 322521103}
+--- !u!1001 &378421293
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4622152849605206, guid: cdcb1e2097bbf1a459551a8d697101a8, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622152849605206, guid: cdcb1e2097bbf1a459551a8d697101a8, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622152849605206, guid: cdcb1e2097bbf1a459551a8d697101a8, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622152849605206, guid: cdcb1e2097bbf1a459551a8d697101a8, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622152849605206, guid: cdcb1e2097bbf1a459551a8d697101a8, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622152849605206, guid: cdcb1e2097bbf1a459551a8d697101a8, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622152849605206, guid: cdcb1e2097bbf1a459551a8d697101a8, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622152849605206, guid: cdcb1e2097bbf1a459551a8d697101a8, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 33919488039061940, guid: cdcb1e2097bbf1a459551a8d697101a8,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114573424801250904, guid: cdcb1e2097bbf1a459551a8d697101a8,
+        type: 2}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 114573424801250904, guid: cdcb1e2097bbf1a459551a8d697101a8,
+        type: 2}
+    - target: {fileID: 114465832139625392, guid: cdcb1e2097bbf1a459551a8d697101a8,
+        type: 2}
+      propertyPath: PanelController
+      value: 
+      objectReference: {fileID: 173327995}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: cdcb1e2097bbf1a459551a8d697101a8, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &612145975
 Prefab:
   m_ObjectHideFlags: 0
@@ -1051,150 +1109,3 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1387377286}
   m_Script: {fileID: 11500000, guid: d8a380c8305d7184d8889fb5152aecd3, type: 3}
---- !u!1001 &1767329307
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 114573424801250904, guid: cdcb1e2097bbf1a459551a8d697101a8,
-        type: 2}
-      propertyPath: serializationData.PrefabModifications.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114573424801250904, guid: cdcb1e2097bbf1a459551a8d697101a8,
-        type: 2}
-      propertyPath: serializationData.PrefabModificationsReferencedUnityObjects.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4622152849605206, guid: cdcb1e2097bbf1a459551a8d697101a8, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4622152849605206, guid: cdcb1e2097bbf1a459551a8d697101a8, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4622152849605206, guid: cdcb1e2097bbf1a459551a8d697101a8, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4622152849605206, guid: cdcb1e2097bbf1a459551a8d697101a8, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4622152849605206, guid: cdcb1e2097bbf1a459551a8d697101a8, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4622152849605206, guid: cdcb1e2097bbf1a459551a8d697101a8, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4622152849605206, guid: cdcb1e2097bbf1a459551a8d697101a8, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4622152849605206, guid: cdcb1e2097bbf1a459551a8d697101a8, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 33919488039061940, guid: cdcb1e2097bbf1a459551a8d697101a8,
-        type: 2}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114465832139625392, guid: cdcb1e2097bbf1a459551a8d697101a8,
-        type: 2}
-      propertyPath: PanelController
-      value: 
-      objectReference: {fileID: 173327995}
-    - target: {fileID: 114573424801250904, guid: cdcb1e2097bbf1a459551a8d697101a8,
-        type: 2}
-      propertyPath: serializationData.Prefab
-      value: 
-      objectReference: {fileID: 114573424801250904, guid: cdcb1e2097bbf1a459551a8d697101a8,
-        type: 2}
-    - target: {fileID: 114573424801250904, guid: cdcb1e2097bbf1a459551a8d697101a8,
-        type: 2}
-      propertyPath: serializationData.PrefabModificationsReferencedUnityObjects.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114573424801250904, guid: cdcb1e2097bbf1a459551a8d697101a8,
-        type: 2}
-      propertyPath: m_OnCullStateChanged.m_TypeName
-      value: INVALID_UTF8_STRING
-      objectReference: {fileID: 0}
-    - target: {fileID: 114573424801250904, guid: cdcb1e2097bbf1a459551a8d697101a8,
-        type: 2}
-      propertyPath: m_FontData.m_Font
-      value: 
-      objectReference: {fileID: 68, guid: 0000000000000000e000000000000000, type: 0}
-    - target: {fileID: 114573424801250904, guid: cdcb1e2097bbf1a459551a8d697101a8,
-        type: 2}
-      propertyPath: m_FontData.m_FontSize
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 114573424801250904, guid: cdcb1e2097bbf1a459551a8d697101a8,
-        type: 2}
-      propertyPath: m_FontData.m_FontStyle
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114573424801250904, guid: cdcb1e2097bbf1a459551a8d697101a8,
-        type: 2}
-      propertyPath: m_FontData.m_BestFit
-      value: 52
-      objectReference: {fileID: 0}
-    - target: {fileID: 114573424801250904, guid: cdcb1e2097bbf1a459551a8d697101a8,
-        type: 2}
-      propertyPath: m_FontData.m_MaxSize
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 114573424801250904, guid: cdcb1e2097bbf1a459551a8d697101a8,
-        type: 2}
-      propertyPath: m_FontData.m_Alignment
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114573424801250904, guid: cdcb1e2097bbf1a459551a8d697101a8,
-        type: 2}
-      propertyPath: m_FontData.m_AlignByGeometry
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114573424801250904, guid: cdcb1e2097bbf1a459551a8d697101a8,
-        type: 2}
-      propertyPath: m_FontData.m_RichText
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114573424801250904, guid: cdcb1e2097bbf1a459551a8d697101a8,
-        type: 2}
-      propertyPath: m_FontData.m_HorizontalOverflow
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114573424801250904, guid: cdcb1e2097bbf1a459551a8d697101a8,
-        type: 2}
-      propertyPath: m_FontData.m_VerticalOverflow
-      value: 48
-      objectReference: {fileID: 0}
-    - target: {fileID: 114573424801250904, guid: cdcb1e2097bbf1a459551a8d697101a8,
-        type: 2}
-      propertyPath: m_FontData.m_LineSpacing
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114573424801250904, guid: cdcb1e2097bbf1a459551a8d697101a8,
-        type: 2}
-      propertyPath: m_Text
-      value: "\x01"
-      objectReference: {fileID: 0}
-    - target: {fileID: 4886437153906852, guid: cdcb1e2097bbf1a459551a8d697101a8, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 4886437153906852, guid: cdcb1e2097bbf1a459551a8d697101a8, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 95313336580391100, guid: cdcb1e2097bbf1a459551a8d697101a8, type: 2}
-  m_ParentPrefab: {fileID: 100100000, guid: cdcb1e2097bbf1a459551a8d697101a8, type: 2}
-  m_IsPrefabParent: 0

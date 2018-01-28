@@ -53,11 +53,10 @@ namespace Controllers
 
         void Awake()
         {
-            Animator = Container.GetComponent<Animator>();
+            //Animator = Container.GetComponent<Animator>();
             Rb2D.freezeRotation = true;
             _ready = false;
-            Animator.Play("Idle");
-
+            //Animator.Play("Idle");
         }
 
         void Update()
@@ -178,23 +177,7 @@ namespace Controllers
         private void OnCollisionEnter2D(Collision2D other)
         {
             
-            if (other.collider.CompareTag("Hand"))
-            {
-                if (other.transform.childCount > 0)
-                {
-                    GameController.Instance.SpellController.StaticSpell(this, other.gameObject.GetComponent<PlayerController>());
-                }
-                else
-                {
-                    Debug.LogError("It shouldnt enter here");
-                }
-            }
-            else if (other.collider.CompareTag("Spell"))
-            {
-                BaseSpell usedSpell = other.gameObject.GetComponent<BaseSpell>();
-                usedSpell.UseSpell();
-                //Destroy(other.gameObject);
-            }
+
         }
 
         private void OnCollisionStay2D(Collision2D other)
@@ -235,6 +218,23 @@ namespace Controllers
                     return;
                 }
                 spell.SpellCollected(this, spell.SpellType);
+            }
+            else if (obj.CompareTag("Hand"))
+            {
+                if (obj.transform.childCount > 0)
+                {
+                    GameController.Instance.SpellController.StaticSpell(this, obj.gameObject.GetComponent<PlayerController>());
+                }
+                else
+                {
+                    Debug.LogError("It shouldnt enter here");
+                }
+            }
+            else if (obj.CompareTag("Spell"))
+            {
+                BaseSpell usedSpell = obj.gameObject.GetComponent<BaseSpell>();
+                usedSpell.UseSpell();
+                //Destroy(other.gameObject);
             }
         }
 
