@@ -18,7 +18,7 @@ namespace Controllers
     public class PlayerController : MonoBehaviour
     {
         public Transform CanvasContainer;
-        public Transform Container;
+        public Transform PhysicsContainer;
         // ReSharper disable once InconsistentNaming
         public string PlayerID;
         public float MinGroundNormalY = .65f;
@@ -175,7 +175,7 @@ namespace Controllers
             if (move.x != 0)
             {
                 Flip = move.x < Mathf.Epsilon;
-                Container.localScale = new Vector3(Flip ? -1 : 1,1,1);
+                PhysicsContainer.localScale = new Vector3(Flip ? -1 : 1,1,1);
             }
 
             _targetVelocity = move * MaxSpeed;
