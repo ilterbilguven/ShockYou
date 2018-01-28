@@ -25,4 +25,20 @@ public class HandController : MonoBehaviour {
 
         SpellInHand = null;
     }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.collider.CompareTag("Charging") || other.collider.CompareTag("Neutral"))
+        {
+            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), other.collider);
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D other)
+    {
+        if (other.collider.CompareTag("Charging") || other.collider.CompareTag("Neutral"))
+        {
+            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), other.collider);
+        }
+    }
 }

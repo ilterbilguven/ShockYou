@@ -83,7 +83,7 @@ GameObject:
   - component: {fileID: 4332409470773008}
   - component: {fileID: 61732915671207520}
   - component: {fileID: 114943772178866306}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RightHand
   m_TagString: Hand
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4729777424476490}
   - component: {fileID: 212394695127076704}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpellIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 224864680260139476}
   - component: {fileID: 222075959294131644}
   - component: {fileID: 114400712289518986}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Image
   m_TagString: Hand
   m_Icon: {fileID: 0}
@@ -197,7 +197,7 @@ GameObject:
   - component: {fileID: 4240195923984406}
   - component: {fileID: 61027754554592840}
   - component: {fileID: 114225361608512454}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RightHand
   m_TagString: Hand
   m_Icon: {fileID: 0}
@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 224137000080610620}
   - component: {fileID: 222471681782023496}
   - component: {fileID: 114529652637839132}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Image
   m_TagString: Hand
   m_Icon: {fileID: 0}
@@ -380,7 +380,7 @@ GameObject:
   - component: {fileID: 4918902571425234}
   - component: {fileID: 61014176585268046}
   - component: {fileID: 114003376585603798}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RightHand
   m_TagString: Hand
   m_Icon: {fileID: 0}
@@ -449,7 +449,7 @@ GameObject:
   - component: {fileID: 4097281702312594}
   - component: {fileID: 61709317693600368}
   - component: {fileID: 114659089532998990}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RightHand
   m_TagString: Hand
   m_Icon: {fileID: 0}
@@ -614,7 +614,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1821059541483006
 GameObject:
   m_ObjectHideFlags: 1
@@ -655,7 +655,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4413120903276206}
   - component: {fileID: 212553448161862364}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpellIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -725,7 +725,7 @@ GameObject:
   - component: {fileID: 224208354083515802}
   - component: {fileID: 222101037460992448}
   - component: {fileID: 114049169561765786}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Image
   m_TagString: Hand
   m_Icon: {fileID: 0}
@@ -1324,7 +1324,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.015023783, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1335,7 +1335,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.32, y: 0.58}
+  m_Size: {x: 0.28995243, y: 0.58}
   m_EdgeRadius: 0
 --- !u!61 &61297513040895488
 BoxCollider2D:
@@ -1374,7 +1374,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.010516778, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1385,7 +1385,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.31, y: 0.58}
+  m_Size: {x: 0.28896645, y: 0.58}
   m_EdgeRadius: 0
 --- !u!61 &61709317693600368
 BoxCollider2D:
@@ -1449,7 +1449,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.03}
+  m_Offset: {x: -0.010516673, y: 0.030000001}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1460,7 +1460,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.33, y: 0.64}
+  m_Size: {x: 0.3089667, y: 0.64}
   m_EdgeRadius: 0
 --- !u!95 &95057705147024136
 Animator:
@@ -1695,7 +1695,7 @@ MonoBehaviour:
   _charge: 0
   ChargeAmount: 0
   ChargeLimit: 100
-  ChargeRate: 0.5
+  ChargeRate: 0.1
 --- !u!114 &114219981786278058
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1797,7 +1797,7 @@ MonoBehaviour:
   _charge: 0
   ChargeAmount: 0
   ChargeLimit: 100
-  ChargeRate: 0.5
+  ChargeRate: 0.1
 --- !u!114 &114301338367765228
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1830,7 +1830,7 @@ MonoBehaviour:
   _charge: 0
   ChargeAmount: 0
   ChargeLimit: 100
-  ChargeRate: 0.5
+  ChargeRate: 0.1
 --- !u!114 &114317870303160878
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1863,7 +1863,7 @@ MonoBehaviour:
   _charge: 0
   ChargeAmount: 0
   ChargeLimit: 100
-  ChargeRate: 0.5
+  ChargeRate: 0.1
 --- !u!114 &114394867064421740
 MonoBehaviour:
   m_ObjectHideFlags: 1
