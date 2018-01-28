@@ -102,6 +102,7 @@ public class SpellController : SerializedMonoBehaviour
         ushort divider = 10;
         ushort knockbackForce = (ushort) (sender.ChargeAmount / divider);
         receiver.Knockback(knockbackForce);
+        receiver.ShellShocked();
 
         sender.ChargeAmount = 0;
     }

@@ -308,5 +308,10 @@ namespace Controllers
         {
             Rb2D.AddForce(new Vector2(Flip ? amount : -amount,0), ForceMode2D.Impulse);
         }
+
+        public void ShellShocked()
+        {
+            Animator.SetInteger("State", 2);
+        }
     }
 }
