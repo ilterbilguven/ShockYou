@@ -1,6 +1,5 @@
 ﻿using System;
 using Controllers;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,13 +9,15 @@ public class VictoryPanel : PanelBase
     public Text Header;
     [SerializeField]
     public List<PlayerEntry> Players;
-    public Image Player1Image;
+
+    public GameObject Player1Container;
+    public GameObject Player2Container;
+    public GameObject Player3Container;
+    public GameObject Player4Container;
+
     public Text Player1Score;
-    public Image Player2Image;
     public Text Player2Score;
-    public Image Player3Image;
     public Text Player3Score;
-    public Image Player4Image;
     public Text Player4Score;
 
     private LTDescr _waveZoomAnimation;
@@ -26,11 +27,11 @@ public class VictoryPanel : PanelBase
     private void OnEnable()
     {
         PlayWaveZoomAnimation();
-        
         foreach (var item in GameController.Instance.Players)
         {
             _playerList.Add(item.GetComponent<PlayerController>());
         }
+        Open(_playerList);
     }
 
     private void OnDisable()
@@ -50,25 +51,22 @@ public class VictoryPanel : PanelBase
 
         if (playerCount >= 4)
         {
-            Player4Image.sprite = playerList[3].GetPlayerSpriteByType();
-            //Player4Score.text = playerList[3].;
-            Player4Score.text = "200";
+            Player4Container.gameObject.SetActive(true);
+            Player4Score.text = playerList[3].Score.ToString();
         }
         if (playerCount >= 3)
         {
-            Player3Image.sprite = playerList[2].GetPlayerSpriteByType();
-            //Player3Score.text = playerList[2].player;
-            Player3Score.text = "150";
+            Player3Container.gameObject.SetActive(true);
+            Player3Score.text = playerList[2].Score.ToString();
         }
         if (playerCount >= 2)
         {
-            Player2Image.sprite = playerList[1].GetPlayerSpriteByType();
-            //Player2Score.text = playerList[1].player;
-            Player2Score.text = "100";
+            Player2Container.gameObject.SetActive(true);
+            Player1Container.gameObject.SetActive(true);
 
-            Player1Image.sprite = playerList[0].GetPlayerSpriteByType();
-            //Player1Score.text = playerList[0].player;
-            Player1Score.text = "50";
+            Player2Score.text = playerList[1].Score.ToString();
+            Player1Score.text = playerList[0].Score.ToString();
+            
         }
         if (playerCount == 1 || playerCount == 0)
         {
