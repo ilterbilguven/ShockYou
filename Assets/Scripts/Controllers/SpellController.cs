@@ -102,27 +102,6 @@ public class SpellController : SerializedMonoBehaviour
         receiver.Knockback(sender.ChargeAmount);
 
     }
-
-    //public void BatterySpell(PlayerController sender, PlayerController receiver)
-    //{
-    //    int baseDamage = sender.ChargeAmount;
-
-    //    Debug.Log(sender.PlayerID + " gave " + baseDamage + " BATTERY damage to " + receiver.PlayerID);
-    //}
-
-    //public void TaserSpell(PlayerController sender, PlayerController receiver)
-    //{
-    //    int baseDamage = sender.ChargeAmount;
-
-    //    Debug.Log(sender.PlayerID + " gave " + baseDamage+75 + " TASER damage to " + receiver.PlayerID);
-    //}
-
-    //public void BaloonSpell(PlayerController user)
-    //{
-    //    Debug.Log(user.PlayerID + " has gained 25 charge from BALOON spell");
-    //}
-
-
     #endregion
 
 
