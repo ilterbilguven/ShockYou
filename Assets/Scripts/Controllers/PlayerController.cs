@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Controllers
 {
@@ -41,7 +42,8 @@ namespace Controllers
         private ContactFilter2D _contactFilter;
         private RaycastHit2D[] _hitBuffer = new RaycastHit2D[16];
         private List<RaycastHit2D> _hitBufferList = new List<RaycastHit2D>(16);
-        
+
+        public Text ChargeText;
 
         private const float MinMoveDistance = 0.001f;
         private const float ShellRadius = 0.01f;
@@ -50,6 +52,7 @@ namespace Controllers
         public ushort Health = 0;
         [SerializeField] private bool _charge;
         public ushort ChargeAmount = 0;
+        public ushort ChargeLimit = 100;
         public float ChargeRate = 0.5f;
 
         void Awake()
@@ -78,6 +81,8 @@ namespace Controllers
             if (!_go) return;
             _targetVelocity = Vector2.zero;
             ComputeVelocity();
+
+            ChargeText.text = ChargeAmount.ToString();
         }
 
         private void OnEnable()
@@ -210,7 +215,7 @@ namespace Controllers
         private IEnumerator Charge()
         {
             yield return new WaitUntil(() => _charge);
-            ChargeAmount++;
+            if (ChargeAmount <= ChargeLimit) ChargeAmount++;
             yield return new WaitForSecondsRealtime(ChargeRate);
             StartCoroutine(Charge());
         }
