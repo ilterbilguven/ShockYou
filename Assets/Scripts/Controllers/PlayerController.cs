@@ -37,6 +37,7 @@ namespace Controllers
         [SerializeField] private Vector2 _velocity;
         private bool _grounded;
         private bool _ready;
+        private bool _go;
         private ContactFilter2D _contactFilter;
         private RaycastHit2D[] _hitBuffer = new RaycastHit2D[16];
         private List<RaycastHit2D> _hitBufferList = new List<RaycastHit2D>(16);
@@ -54,16 +55,29 @@ namespace Controllers
         void Awake()
         {
             //Animator = Container.GetComponent<Animator>();
-            Rb2D.freezeRotation = true;
+            Rb2D.constraints = RigidbodyConstraints2D.FreezeAll;
             _ready = false;
             //Animator.Play("Idle");
+            GameController.Instance.LevelStarted += LevelStarted;
+        }
+
+        private void LevelStarted()
+        {
+            if (_ready)
+            {
+                Rb2D.constraints = RigidbodyConstraints2D.FreezeRotation;
+            }
+
+            _go = _ready;
         }
 
         void Update()
         {
+            Fire();
+
+            if (!_go) return;
             _targetVelocity = Vector2.zero;
             ComputeVelocity();
-            Fire();
         }
 
         private void OnEnable()
@@ -73,6 +87,7 @@ namespace Controllers
 
         void FixedUpdate()
         {
+            if (!_go) return;
             _velocity += GravityModifier * Physics2D.gravity * Time.deltaTime;
             _velocity.x = _targetVelocity.x;
 

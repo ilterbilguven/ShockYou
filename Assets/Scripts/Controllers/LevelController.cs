@@ -6,7 +6,10 @@ using UnityEngine.UI;
 
 namespace Controllers
 {
-    public class LevelController : MonoBehaviour {
+    public class LevelController : MonoBehaviour
+    {
+
+        public Action LevelStarted;
 
         public List<Transform> SpellPoints;
         public List<Transform> SpawnPoints;
@@ -19,6 +22,7 @@ namespace Controllers
             GameController.Instance.LevelController = this;
             GameController.Instance.LevelStarted.Invoke();
             StartCoroutine(LevelTimer());
+            if (LevelStarted != null) LevelStarted();
         }
 
         private void OnDisable()
