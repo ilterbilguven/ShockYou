@@ -81,13 +81,6 @@ RightShoulderpads
   orig: 70, 77
   offset: 0, 0
   index: -1
-Screen Shot 2018-01-27 at 13.51.27
-  rotate: false
-  xy: 2, 2
-  size: 1341, 482
-  orig: 1341, 482
-  offset: 0, 0
-  index: -1
 Shoulder
   rotate: true
   xy: 1981, 430
