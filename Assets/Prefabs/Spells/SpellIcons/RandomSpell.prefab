@@ -78,7 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87c79ddaf3174ce45ad63a8acb2d7b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpellType: 42
+  SpellType: 0
   SpellImage: {fileID: 212750937095862472}
 --- !u!212 &212750937095862472
 SpriteRenderer:
